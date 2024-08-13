@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            overflow: hidden;
+            position: fixed;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="screenType">Hell</h1>
+    <iframe class="main" src="page1.html" frameborder="0"></iframe>
+</body>
+
+<script>
+    const screenType = document.getElementById("screenType");
+
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        screenType.textContent = "This is a landscape desktop.";
+    } else {
+        screenType.textContent = "This is a portrait desktop.";
+    }
+</script>
+
+</html>

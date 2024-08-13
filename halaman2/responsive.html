@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN WEB HAMBURGER</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+
+        }
+        .layer-9{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        .layer-9 .bg-one{
+            position: fixed;
+            width: 35%;
+            height: auto;
+            top: 20rem;
+            right: -7.5rem;
+
+        }
+        
+        .layer-main{
+            overflow: hidden;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-image: url('assets/layer8/bg.png');
+            background-position: center;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .layer-main .layer-3_meja{
+            position: relative;
+            top: 10rem;
+            left: 70rem;
+        }
+        
+        .layer-2{
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            padding-top: 12rem;
+            left: 66rem;
+        }
+
+        .layer-2 .layer-2_center{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .layer-2 .layer-2_center .bonekahamburg{
+            width: 13rem;
+            position: relative;
+            left: 65px;
+            top: 4.5rem;
+        }
+
+        .layer-2 .layer-2_center .mesinslot{
+            width: 21.8rem;
+            position: relative;
+            bottom: 30px;
+            right: 40px;
+        }
+
+
+        .layer-2 .meja{
+            position: relative;
+            right: 9rem;
+            top: 6rem;
+            width: 50rem;
+            height: 30rem;
+        }
+
+
+
+        .layer-1 .meja{
+            display: flex;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-image: url('meja aset.png');
+            top: 250px;
+        }
+        .layer-1 .animation{
+            display: flex;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-image: url('malf.webp');
+            right: 1350px;
+            top: 200px;
+        }
+
+        .layer-3{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .layer-3 .bar{
+            position: relative;
+            top: 24.5rem;
+            left: 21.8rem;
+            width: 38rem;
+        }
+
+        .layer-3 .kasir{
+            position: relative;
+            left: 50rem;
+            top: 10rem;
+            height: 10rem;
+
+        }
+
+        .layer-4 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .layer-4 .meja{
+            position: fixed;
+            top: 23rem;
+            left: 3.5rem;
+        }
+
+        .layer-4 .light{
+            position: fixed;
+            top: 1.1rem;
+            left: -2.5rem;
+            width: 36.5rem;
+            height: 57rem;
+            opacity: 0;
+        }
+
+        .layer-4 .malf{
+            position: fixed;
+            top: 23rem;
+            left: -3rem;
+            width: 35rem;
+            height: 45rem;
+        }
+
+        .layer-4 .kursi{
+            position: fixed;
+            top: 42.5rem;
+            left: 51rem;
+        }
+
+        .layer-4 .koin{
+            position: fixed;
+            left: 40rem;
+            top: 49.5rem;
+        }
+
+        .layer-4 .daun_A{
+            position: fixed;
+            top: 60px;
+            left: -8rem;
+            animation: swingLeafRight 4s infinite ease-in-out ;
+        }
+
+        .layer-4 .daun_B{
+            position: fixed;
+            top: 3rem;
+            left: -5rem;
+            animation: swingLeafLeft 4s infinite ease-in-out;
+        }
+
+        .layer-4 .daun_one{
+            position: fixed;
+        }
+
+        .layer-4 .cahayahamburg{
+            position: fixed;
+            top: 7rem;
+            left: 35.6rem;
+            width: 26.4rem;
+            height: 16rem;
+            opacity: 0;
+        }
+
+        .layer-4 .wallphone{
+            position: fixed;
+            top: 20rem;
+            left: 22.6rem;
+        }
+
+        .layer-4 .wallphonecell{
+            position: fixed;
+            top: 20.5rem;
+            left: 22.5rem;
+        }
+
+        .layer-4 .ringingwallphone{
+            display: none;
+            position: fixed;
+            top: 19.2rem;
+            left: 26rem;
+        }
+        
+        .layer-4 .ufo{
+            overflow: hidden;
+            position: fixed;
+            display: none;
+            background-position: center;
+            background-size: cover;
+            width: 88%;
+            height: 104%;
+        }
+
+        .trigger1{
+            position: fixed;
+            top: 19rem;
+            left: 8rem;
+            transform: translate(-50%, -60%);
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .trigger2{
+            position: fixed;
+            top: 13rem;
+            left: 37rem;
+            transform: translate(-50%, -60%);
+            width: 22rem;
+            height: 7rem;
+            transform: rotate(8deg);
+        }
+
+        .trigger3{
+            position: fixed;
+            top: 27rem;
+            left: 30rem;
+            transform: translate(-50%, -60%);
+            width: 5rem;
+            height: 10rem;
+        }
+        
+        .trigger4{
+            position: fixed;
+            top: 53rem;
+            left: 45rem;
+            transform: translate(-50%, -60%);
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @keyframes swingLeafLeft {
+            0% {
+                transform: translateX(0) rotate(0deg); /* Posisi awal */
+            }
+            50% {
+                transform: translateX(-25px) rotate(0.5deg); /* Posisi tengah */
+            }
+            100% {
+                transform: translateX(0) rotate(0deg); /* Posisi akhir */
+            }
+        }
+
+
+        @keyframes swingLeafRight{
+            0% {
+                transform: translateX(0) rotate(0deg); /* Posisi awal */
+            }
+            50% {
+                transform: translateX(25px) rotate(0.5deg); /* Posisi tengah */
+            }
+            100% {
+                transform: translateX(0) rotate(0deg); /* Posisi akhir */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layer-9">
+        <img src="assets/layer9/layer9-ezgif.com-video-to-webp-converter.webp" class="bg-one">
+    </div>
+    <div class="layer-main">
+        <div class="layer-2">
+            <div class="layer-2_center">
+                <img src="assets/layer3/bonekahamburg.webp" alt="" class="bonekahamburg">
+                <img src="assets/layer3/mesinslot.webp" alt="" class="mesinslot">
+            </div>
+            <img src="assets/layer3/meja.webp" class="meja">
+        </div> 
+        <!-- <div class="layer-3">
+            <img src="assets/layer7/kasir.webp" alt="" class="kasir">
+            <img src="assets/layer7/bg.png" alt="" class="bar">
+        </div> -->
+        <div class="layer-4">
+            <img src="assets/layer 10/kursi.4.png" alt="" class="kursi">
+            <img src="assets/layer 10/meja aset.png" alt="" class="meja">
+            <img src="assets/layer 10/koin.png" alt="" class="koin" id="koin">
+            <img src="assets/layer 10/phone 2.png" alt="" class="wallphonecell" id="wallphonecell">
+            <img src="assets/layer 10/phone 1.png" alt="" class="wallphone" id="wallphone">
+            <img src="assets/layer 10/ringingwallphone.webp" alt="" class="ringingwallphone" id="ringingwallphone">
+            <img src="assets/lighteffect.png" id="light" alt="" class="light">
+            <img src="assets/layer 10/malf-ezgif.com-video-to-webp-converter (1).webp" alt="" class="malf">
+            <img src="assets/layer 10/daun B.png" alt="" class="daun_B">
+            <img src="assets/layer 10/daun A.png" alt="" class="daun_A">
+            <img src="assets/layer 10/daun 1.png" alt="" class="daun_one">
+            <img src="assets/layer 10/cahaya_pajangan_shadow_hamburger.png" id="cahyahamburg" alt="" class="cahayahamburg">
+            <img src="assets/layer 10/ufo.webp" id="ufoevent" alt="" class="ufo">
+        </div>
+        <div>
+            <div class="trigger1" onmouseover="animateLibertyLightOn()" onmouseleave="animateLibertyLightOff()"></div>
+            <div class="trigger2" onmouseover="animateHamburgLightOn()" onmousemove="animateHamburgLightOn()" onmouseleave="animateHamburgLightOff()"></div>
+            <div class="trigger3" onmouseover="playRingingPhone()" onmouseleave="stopRingingPhone()"></div>
+            <div class="trigger4" onmouseover="UFOEvent()"></div>
+        </div>
+    </div>
+
+    <script>
+        let running = false;
+
+        async function UFOEvent() {
+            if (running) {
+                return;
+            }
+
+            const koin = document.getElementById("koin");
+            const ufoevent = document.getElementById("ufoevent");
+
+            const src = ufoevent.src;
+
+            // Temporarily remove the src attribute and then reset it
+            ufoevent.src = ''; 
+            ufoevent.src = src;
+            koin.style.display = "none";
+            ufoevent.style.display = "block";
+            running = true;
+
+            await wait(9000);
+            
+            koin.style.display = "block";
+            ufoevent.style.display = "none";
+            running = false;
+            
+            function wait(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        }
+
+        const audio = new Audio('assets/layer 10/ringingphone.mp3');
+        const staticphone = document.getElementById("wallphone");
+        const staticphonecell = document.getElementById("wallphonecell");
+        const ringingphone = document.getElementById("ringingwallphone");
+
+        audio.loop = true;
+
+        function playRingingPhone() {
+            staticphone.style.display = "none";
+            staticphonecell.style.display = "none";
+            ringingphone.style.display = "block";
+            audio.play();
+        }
+
+        function stopRingingPhone() {
+            staticphone.style.display = "block";
+            staticphonecell.style.display = "block";
+            ringingphone.style.display = "none";
+            audio.pause();
+        }
+
+        const animSpeed = 30;
+
+        let alphaBrightness = 0.0;
+
+        function animateHamburgLightOn() {
+            let move = null;
+
+            alphaBrightness = 0;
+            const elem = document.getElementById("cahyahamburg");
+
+            clearInterval(move);
+            move = setInterval(frame, 25);
+
+            function frame() {
+                if (alphaBrightness >= 1) {
+                    clearInterval(move);
+                } else {
+                    alphaBrightness+=0.1;
+                    elem.style.opacity = alphaBrightness.toString();
+                }
+            }
+        }
+
+        function animateHamburgLightOff() {
+            let move = null;
+
+            const elem = document.getElementById("cahyahamburg");
+
+            clearInterval(move);
+            move = setInterval(frame, 40);
+
+            function frame() {
+                if (alphaBrightness <= 0) {
+                    clearInterval(move);
+                } else {
+                    alphaBrightness-=0.1;
+                    elem.style.opacity = (Math.round(alphaBrightness * 10) / 10).toString();
+                }
+            }
+        }
+
+        function animateLibertyLightOn() {
+            let move = null;
+            let alpha = 0.0;
+
+            const elem = document.getElementById("light");
+
+            clearInterval(move);
+            move = setInterval(frame, animSpeed);
+
+            function frame() {
+                if (alpha >= 0.6) {
+                    clearInterval(move);
+                } else {
+                    alpha+=0.1;
+                    elem.style.opacity = (Math.round(alpha * 10) / 10).toString();
+                }
+            }
+        }
+        
+        function animateLibertyLightOff() {
+            let move = null;
+            let alpha = 0.6;
+
+            const elem = document.getElementById("light");
+
+            clearInterval(move);
+            move = setInterval(frame, 40);
+
+            function frame() {
+                if (alpha <= 0) {
+                    clearInterval(move);
+                } else {
+                    alpha-=0.1;
+                    elem.style.opacity = (Math.round(alpha * 10) / 10).toString();
+                }
+            }
+        }
+    </script>    
+</body>
+</html>
