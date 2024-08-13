@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMBURG</title>
+
+    <link rel="stylesheet" href="all-assets/allstyle.css">
+</head>
+
+<body>
+    <iframe class="framescreen" src="halaman2/landscape/index.html" frameborder="0" id="landscape"></iframe>
+    <iframe class="framescreen" src="halaman2/oriental/index.html" frameborder="0" id="oriental"></iframe>
+</body>
+
+<script>
+    const landscape = document.getElementById("landscape");
+    const oriental = document.getElementById("oriental");
+
+    window.addEventListener("resize", function() {
+        setPage();
+    });
+
+    window.addEventListener("load", function() {
+        setPage();
+    });
+
+    function setPage() {     
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            landscape.style.display = "block";
+            oriental.style.display = "none";
+        } else {
+            landscape.style.display = "none";
+            oriental.style.display = "block";
+        }
+    }
+</script>
+</html>
