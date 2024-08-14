@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HAMBURG</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css-landscape/style.css" />
     <link rel="stylesheet" href="../../all-assets/allstyle.css" />
 
     <script>
@@ -110,9 +110,10 @@
         });
 
         let runningDoor = false;
+        let clickedDoor = false;
 
         function animateDoor() {
-            if (runningDoor) {
+            if (runningDoor || clickedDoor) {
                 return;
             }
 
@@ -154,10 +155,8 @@
             }
         }
 
-        let clickedDoor = false;
-
         function enterDoor() {
-            if (clickedDoor) {
+            if (clickedDoor || runningDoor) {
                 return;
             }
 
@@ -175,7 +174,7 @@
             function openFrame() {
                 if (posX <= -90) {
                     clearInterval(move);
-                    window.location.href = "../../page2.html";
+                    window.top.open("../../page2.html", "_self");
                 } else {
                     posX -= 1;
                     elem.style.transform = `translate(${posX}%, 0)`;

@@ -7,16 +7,47 @@
     <title>HAMBURG</title>
 
     <link rel="stylesheet" href="all-assets/allstyle.css">
+    <script>
+        async function ScrollMobile() {
+            console.log("ScrollMobile");
+        }
+    </script>
 </head>
 
 <body>
     <iframe class="framescreen" src="halaman1/landscape/index.html" frameborder="0" id="landscape"></iframe>
     <iframe class="framescreen" src="halaman1/oriental/index.html" frameborder="0" id="oriental"></iframe>
+    <div class="hoverscrollleft" onclick="ScrollMobile(event)" id="hoverLeft"></div>
+    <div class="hoverscrollright" onclick="ScrollMobile(event)" id="hoverRight"></div>
 </body>
 
 <script>
+    const hoverLeft = document.getElementById("hoverLeft");
+    const hoverRight = document.getElementById("hoverRight");
     const landscape = document.getElementById("landscape");
     const oriental = document.getElementById("oriental");
+
+    let translateX = -40;
+
+    function ScrollMobile(e) {
+        const pageWidth = window.innerWidth;
+        
+        const mouseX = e.clientX;
+
+        if (mouseX < pageWidth / 2) {
+            console.log("Left side");
+            if (translateX < 0) {
+                translateX += 1;
+            }
+        } else {
+            console.log("Right side");
+            if (translateX > -80) {
+                translateX -= 1;
+            }
+        }
+
+        oriental.style.transform = `translateX(${translateX}%)`;
+    }
 
     window.addEventListener("resize", function() {
         setPage();
@@ -30,9 +61,13 @@
         if (window.matchMedia("(orientation: landscape)").matches) {
             landscape.style.display = "block";
             oriental.style.display = "none";
+            hoverLeft.style.display = "none";
+            hoverRight.style.display = "none";
         } else {
             landscape.style.display = "none";
             oriental.style.display = "block";
+            hoverLeft.style.display = "block";
+            hoverRight.style.display = "block";
         }
     }
 </script>
