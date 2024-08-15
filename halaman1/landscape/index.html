@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,186 +7,316 @@
     <link rel="stylesheet" href="../assets/css-landscape/style.css" />
     <link rel="stylesheet" href="../../all-assets/allstyle.css" />
 
-    <script>
-        let running = false;
+        <script>
+            let running = false;
 
-        function animateBurgerRocket() {
-            if (running) {
-                return;
-            }
-
-            running = true;
-            let move = null;
-            let posY = 35.0;
-            let posX = 32.0;
-            const elem = document.getElementById("burger");
-
-            clearInterval(move);
-            move = setInterval(frame, 20);
-
-            function frame() {
-                if (posX >= 40 && posY <= -50) {
-                    running = false;
-                    clearInterval(move);
-                } else {
-                    posX += 0.1;
-                    posY -= 0.5;
-                    elem.style.left = posX + "%";
-                    elem.style.top = posY + "%";
+            function animateBurgerRocket() {
+                if (running) {
+                    return;
                 }
-            }
-        }
 
-        document.addEventListener("mousemove", function(e) {
-            const awan = document.getElementById("awan");
-            const pohon = document.getElementById("pohon");
-            const rumah = document.getElementById("rumah");
+                running = true;
+                let move = null;
+                let posY = 35.0;
+                let posX = 32.0;
+                const elem = document.getElementById("burger");
 
-            const speedAwan = 0.06;
-            const speedPohon = 0.03;
-            const speedRumah = 0.005;
+                clearInterval(move);
+                move = setInterval(frame, 20);
 
-            const windowWidth = window.innerWidth;
-            const mouseX = e.clientX;
-
-            const offsetAwan = (mouseX - windowWidth / 2) * speedAwan;
-            const offsetPohon = (mouseX - windowWidth / 2) * speedPohon;
-            const offsetRumah = (mouseX - windowWidth / 2) * speedRumah;
-
-            awan.style.transform = `translateX(${offsetAwan}px)`;
-            pohon.style.transform = `translateX(${offsetPohon}px)`;
-            rumah.style.transform = `translateX(${offsetRumah}px)`;
-        });
-
-        let runningDoor = false;
-        let clickedDoor = false;
-
-        function animateDoor() {
-            if (runningDoor || clickedDoor) {
-                return;
-            }
-
-            runningDoor = true;
-
-            let move = null;
-            let posX = 0;
-
-            clearInterval(move);
-            move = setInterval(openFrame, 20);
-
-            const door = document.getElementById("door");
-            const barangMasuk = document.getElementById("barangMasuk");
-
-            function openFrame() {
-                if (posX <= -60) {
-                    clearInterval(move);
-                    setTimeout(() => {
-                        move = setInterval(closeFrame, 20);
-                    }, 2000); // Tahan pintu terbuka selama 2 detik
-                } else {
-                    posX -= 1;
-                    door.style.transform = `translate(${posX}%, 0)`;
-                    barangMasuk.style.display = "block";
-                    // if (posX <= -15) {
-                    //     barangMasuk.style.display = "block";
-                    // }
+                function frame() {
+                    if (posX >= 40 && posY <= -50) {
+                        running = false;
+                        clearInterval(move);
+                    } else {
+                        posX += 0.1;
+                        posY -= 0.5;
+                        elem.style.left = posX + "%";
+                        elem.style.top = posY + "%";
+                    }
                 }
             }
 
-            function closeFrame() {
-                if (posX >= 0) {
-                    clearInterval(move);
-                    barangMasuk.style.display = "none";
-                    runningDoor = false;
-                } else {
-                    posX += 0.8;
-                    door.style.transform = `translate(${posX}%, 0)`;
+            document.addEventListener("mousemove", function (e) {
+                const awan = document.getElementById("awan");
+                const pohon = document.getElementById("pohon");
+                const rumah = document.getElementById("rumah");
+
+                const speedAwan = 0.06;
+                const speedPohon = 0.03;
+                const speedRumah = 0.005;
+
+                const windowWidth = window.innerWidth;
+                const mouseX = e.clientX;
+
+                const offsetAwan = (mouseX - windowWidth / 2) * speedAwan;
+                const offsetPohon = (mouseX - windowWidth / 2) * speedPohon;
+                const offsetRumah = (mouseX - windowWidth / 2) * speedRumah;
+
+                awan.style.transform = `translateX(${offsetAwan}px)`;
+                pohon.style.transform = `translateX(${offsetPohon}px)`;
+                rumah.style.transform = `translateX(${offsetRumah}px)`;
+            });
+
+            let runningDoor = false;
+            let clickedDoor = false;
+
+            function animateDoor() {
+                if (runningDoor || clickedDoor) {
+                    return;
+                }
+
+                runningDoor = true;
+
+                let move = null;
+                let posX = 0;
+
+                clearInterval(move);
+                move = setInterval(openFrame, 20);
+
+                const door = document.getElementById("door");
+                const barangMasuk = document.getElementById("barangMasuk");
+
+                function openFrame() {
+                    if (posX <= -60) {
+                        clearInterval(move);
+                        setTimeout(() => {
+                            move = setInterval(closeFrame, 20);
+                        }, 2000); // Tahan pintu terbuka selama 2 detik
+                    } else {
+                        posX -= 1;
+                        door.style.transform = `translate(${posX}%, 0)`;
+                        barangMasuk.style.display = "block";
+                        // if (posX <= -15) {
+                        //     barangMasuk.style.display = "block";
+                        // }
+                    }
+                }
+
+                function closeFrame() {
+                    if (posX >= 0) {
+                        clearInterval(move);
+                        barangMasuk.style.display = "none";
+                        runningDoor = false;
+                    } else {
+                        posX += 0.8;
+                        door.style.transform = `translate(${posX}%, 0)`;
+                    }
                 }
             }
-        }
 
-        function enterDoor() {
-            if (clickedDoor || runningDoor) {
-                return;
-            }
+            function enterDoor() {
+                if (clickedDoor || runningDoor) {
+                    return;
+                }
 
-            clickedDoor = true;
-            let move = null;
-            let posX = 0;
-            const elem = document.getElementById("door");
+                clickedDoor = true;
+                let move = null;
+                let posX = 0;
+                const elem = document.getElementById("door");
 
-            clearInterval(move);
-            move = setInterval(openFrame, 20);
+                clearInterval(move);
+                move = setInterval(openFrame, 20);
 
-            const door = document.getElementById("door");
-            const barangMasuk = document.getElementById("barangMasuk");
+                const door = document.getElementById("door");
+                const barangMasuk = document.getElementById("barangMasuk");
 
-            function openFrame() {
-                if (posX <= -60) {
-                    clearInterval(move);
-                    window.top.open("../../page2.html", "_self");
-                } else {
-                    posX -= 1;
-                    elem.style.transform = `translate(${posX}%, 0)`;
-                    barangMasuk.style.display = "block";
-                    // if (posX <= -15) {
-                    //     barangMasuk.style.display = "block";
-                    // }
+                function openFrame() {
+                    if (posX <= -60) {
+                        clearInterval(move);
+                        window.top.open("../../page2.html", "_self");
+                    } else {
+                        posX -= 1;
+                        elem.style.transform = `translate(${posX}%, 0)`;
+                        barangMasuk.style.display = "block";
+                        // if (posX <= -15) {
+                        //     barangMasuk.style.display = "block";
+                        // }
+                    }
                 }
             }
-        }
-    </script>
-</head>
+        </script>
+    </head>
 
-<body>
-    <div class="container-main" id="container-main">
-        <!-- Awan -->
-        <div id="awan" class="layer1"></div>
+    <body>
+        <audio id="bicycle" autoplay>
+            <source src="/all-assets/bicycle.mp3" type="audio/mpeg" />
+        </audio>
 
-        <!-- Pohon -->
-        <div id="pohon" class="layer2" style="z-index: 2"></div>
+        <audio id="restaurant-ambience" autoplay>
+            <source
+                src="/all-assets/Restaurant Ambience.mp3"
+                type="audio/mpeg"
+            />
+        </audio>
 
-        <!-- Rumah -->
-        <div id="rumah" class="layer3" style="z-index: 3"></div>
+        <audio id="cat" autoplay>
+            <source src="/all-assets/cat.mp3" type="audio/mpeg" />
+        </audio>
 
-        <!-- Burger Roket -->
-        <div id="burger" class="layer4" style="z-index: 4"></div>
+        <audio id="bicycle-bell" autoplay>
+            <source src="/all-assets/bicycle bell.mp3" type="audio/mpeg" />
+        </audio>
 
-        <!-- Pintu -->
-        <div id="door-hover" class="doortrigger" style="z-index: 9" onmouseenter="animateDoor()" onclick="enterDoor()"></div>
-        <div class="black" style="z-index: 4"></div>
-        <div id="door" class="door" style="z-index: 4"></div>
+        <div class="container-main" id="container-main">
+            <!-- Awan -->
+            <div id="awan" class="layer1"></div>
 
-        <!-- Main -->
-        <div class="layer5" style="z-index: 5">
-            <div class="bendera"></div>
-            <div class="kucing"></div>
-            <div class="alien"></div>
-            <div class="koran"></div>
-            <div class="table1"></div>
-            <div class="table2"></div>
-            <div class="table3"></div>
-            <div class="waiter"></div>
-            <div class="pepefinker"></div>
-            <div class="bola" id="bola"></div>
+            <!-- Pohon -->
+            <div id="pohon" class="layer2" style="z-index: 2"></div>
+
+            <!-- Rumah -->
+            <div id="rumah" class="layer3" style="z-index: 3"></div>
+
+            <!-- Burger Roket -->
+            <div id="burger" class="layer4" style="z-index: 4"></div>
+
+            <!-- Pintu -->
+            <div
+                id="door-hover"
+                class="doortrigger"
+                style="z-index: 9"
+                onmouseenter="animateDoor()"
+                onclick="enterDoor()"
+            ></div>
+            <div class="black" style="z-index: 4"></div>
+            <div id="door" class="door" style="z-index: 4"></div>
+
+            <!-- Main -->
+            <div class="layer5" style="z-index: 5">
+                <div class="bendera"></div>
+                <div class="kucing"></div>
+                <div class="alien"></div>
+                <div class="koran"></div>
+                <div class="table1"></div>
+                <div class="table2"></div>
+                <div class="table3"></div>
+                <div class="waiter"></div>
+                <div class="pepefinker"></div>
+                <div class="bola" id="bola"></div>
+            </div>
+
+            <!-- Trotoar -->
+            <div class="layer6" style="z-index: 6">
+                <div alt="Trotoar" class="trotoar"></div>
+                <div alt="asep" class="asep"></div>
+                <img
+                    src="../assets/contents/sepeda.gif"
+                    alt="sepeda"
+                    class="sepeda"
+                />
+                <div alt="flyingburger" class="flyingburger"></div>
+            </div>
+
+            <!-- Efek Barang Masuk -->
+            <div class="layer7" style="z-index: 8">
+                <div
+                    id="barangMasuk"
+                    alt="barangMasuk"
+                    class="barangMasuk"
+                ></div>
+            </div>
+
+            <!-- Efek Hover -->
+            <div
+                class="hover"
+                style="z-index: 100"
+                onmouseover="animateBurgerRocket()"
+            ></div>
         </div>
 
-        <!-- Trotoar -->
-        <div class="layer6" style="z-index: 6">
-            <div alt="Trotoar" class="trotoar"></div>
-            <div alt="asep" class="asep"></div>
-            <img src="../assets/contents/sepeda.gif" alt="sepeda" class="sepeda" />
-            <div alt="flyingburger" class="flyingburger"></div>
-        </div>
+        <script>
+            // Attach an event listener for the user's interaction
+            window.addEventListener("load", () => {
+                const restaurant = document.getElementById("restaurant-ambience");
+                restaurant.volume = 1;
 
-        <!-- Efek Barang Masuk -->
-        <div class="layer7" style="z-index: 8">
-            <div id="barangMasuk" alt="barangMasuk" class="barangMasuk"></div>
-        </div>
+                // Attempt to play the audio
+                const restaurantPromise = restaurant.play();
 
-        <!-- Efek Hover -->
-        <div class="hover" style="z-index: 100" onmouseover="animateBurgerRocket()"></div>
-    </div>
+                // Check if the play attempt was successful
+                if (restaurantPromise !== undefined) {
+                    restaurantPromise
+                        .then(() => {
+                            // Audio is playing
+                            console.log("Audio playing");
+                        })
+                        .catch((error) => {
+                            // Handle play errors
+                            console.error("Error playing audio:", error);
+                        });
+                }
+
+                // Add the ended event listener
+                restaurant.addEventListener("ended", () => {
+                    restaurant.currentTime = 0;
+                    restaurant.play();
+                });
+                const bicycleAudio = document.getElementById("bicycle");
+                bicycleAudio.volume = 0.1;
+
+                // Attempt to play the audio
+                const playPromise = bicycleAudio.play();
+
+                // Check if the play attempt was successful
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => {
+                            // Audio is playing
+                            console.log("Audio playing");
+                        })
+                        .catch((error) => {
+                            // Handle play errors
+                            console.error("Error playing audio:", error);
+                        });
+                }
+
+                // Add the ended event listener
+                bicycleAudio.addEventListener("ended", () => {
+                    bicycleAudio.currentTime = 0;
+                    bicycleAudio.play();
+                });
+
+                // Repeat cat audio every 5 seconds
+                const catAudio = document.getElementById("cat");
+                catAudio.volume = 0.5;
+
+                // Function to play the cat audio repeatedly
+                function playCatAudio() {
+                    catAudio.currentTime = 0;
+                    catAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Repeat cat audio every 5 seconds
+                const bellAudio = document.getElementById("bicycle-bell");
+                bellAudio.volume = 0.5;
+
+                // Function to play the cat audio repeatedly
+                function playbellAudio() {
+                    bellAudio.currentTime = 0;
+                    bellAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Play once and then set an interval
+                playCatAudio();
+                setInterval(playCatAudio, 5000);
+
+                // Play once and then set an interval
+                playbellAudio();
+                setInterval(playbellAudio, 7000);
+            });
+
+            //Make bycicle sound and restaurant ambience sound looping
+            document.getElementById("bicycle").loop = true;
+            document.getElementById("restaurant-ambience").loop = true;
+        </script>
 </body>
+</body>
+
+    </body>
 
 </html>
