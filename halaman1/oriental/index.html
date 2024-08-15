@@ -129,7 +129,7 @@
             const barangMasuk = document.getElementById("barangMasuk");
 
             function openFrame() {
-                if (posX <= -90) {
+                if (posX <= -30) {
                     clearInterval(move);
                     setTimeout(() => {
                         move = setInterval(closeFrame, 20);
@@ -137,9 +137,10 @@
                 } else {
                     posX -= 1;
                     door.style.transform = `translate(${posX}%, 0)`;
-                    if (posX <= -45) {
-                        barangMasuk.style.display = "block";
-                    }
+                    barangMasuk.style.display = "block";
+                    // if (posX <= -15) {
+                    //     barangMasuk.style.display = "block";
+                    // }
                 }
             }
 
@@ -172,15 +173,16 @@
             const barangMasuk = document.getElementById("barangMasuk");
 
             function openFrame() {
-                if (posX <= -90) {
+                if (posX <= -30) {
                     clearInterval(move);
                     window.top.open("../../page2.html", "_self");
                 } else {
                     posX -= 1;
                     elem.style.transform = `translate(${posX}%, 0)`;
-                    if (posX <= -45) {
-                        barangMasuk.style.display = "block";
-                    }
+                    barangMasuk.style.display = "block";
+                    // if (posX <= -15) {
+                    //     barangMasuk.style.display = "block";
+                    // }
                 }
             }
         }

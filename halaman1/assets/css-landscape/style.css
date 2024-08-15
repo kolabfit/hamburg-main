@@ -48,7 +48,7 @@ div {
 .door {
     position: absolute;
     top: 43.7%;
-    left: 45%;
+    left: 40%;
     width: 9%;
     height: 24.8%;
     background-image: url('../contents/pintu.png');
@@ -229,62 +229,4 @@ div {
     transform: translate(-50%, -60%);
     width: 32.5%;
     height: 10%;
-}
-
-.intro {
-    background-color: rgba(25, 23, 24, 1);
-}
-
-.loader {
-    background-color: rgba(25, 23, 24, 1);
-}
-
-/* .centerClickText {
-    position: absolute;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 17%;
-    height: 8%;
-    align-items: center;
-    transition: color 0.3s ease, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
-}
-
-.centerClickText:hover {
-    color: #FFCC00;
-    width: 24%;
-    height: 20%;
-    font-size: 1.9em;
-} */
-
-.introAnimation {
-    font-size: 1.85em;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.loadingimage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 64%;
-    height: 64%;
-    background-image: url('../contents/burgerloading.gif');
-}
-
-.loadingtext {
-    position: absolute;
-    top: 125%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 1.4em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

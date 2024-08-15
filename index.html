@@ -7,11 +7,6 @@
     <title>HAMBURG</title>
 
     <link rel="stylesheet" href="all-assets/allstyle.css">
-    <script>
-        async function ScrollMobile() {
-            console.log("ScrollMobile");
-        }
-    </script>
 </head>
 
 <body>
@@ -19,9 +14,74 @@
     <iframe class="framescreen" src="halaman1/oriental/index.html" frameborder="0" id="oriental"></iframe>
     <div class="hoverscrollleft" onclick="ScrollMobile(event)" id="hoverLeft"></div>
     <div class="hoverscrollright" onclick="ScrollMobile(event)" id="hoverRight"></div>
+
+    <!-- Intro Loading -->
+    <div class="intro" id="introPlayer" style="z-index: 101"></div>
+    <!-- <div class="intro" id="introPlayer" style="z-index: 101" onclick="playIntro()">
+            <div class="centerClickText" id="centerClickText">
+                <h1 class="introAnimation">Click to Open</h1>
+            </div>
+        </div> -->
+    <div class="loader" id="loaderPlayer" style="z-index: 102">
+        <div class="loadingimage"></div>
+        <div class="loadingtext">
+            <h3 id="progress">0%</h3>
+            <h3>Loading ...</h3>
+        </div>
+    </div>
 </body>
 
 <script>
+    window.addEventListener("load", async function() {
+        const loaderPlay = document.getElementById("loaderPlayer");
+        const progress = document.getElementById("progress");
+
+        for (let i = 0; i < 100; i++) {
+            const progressContent = i + 1 + "%";
+            progress.textContent = progressContent;
+            console.log("Loading ... " + progressContent);
+            await wait(20);
+        }
+
+        loaderPlay.remove();
+        playIntro();
+    });
+
+    function wait(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    // let done = false;
+
+    function playIntro() {
+        // if (done) {
+        //     return;
+        // }
+
+        // done = true;
+
+        let intro = null;
+        let alpha = 1;
+        const introPlayer = document.getElementById("introPlayer");
+        // const textIntro = document.getElementById("centerClickText");
+
+        clearInterval(intro);
+        intro = setInterval(introframe, 20);
+
+        function introframe() {
+            if (alpha <= 0) {
+                done = true;
+                clearInterval(intro);
+                introPlayer.remove();
+                // textIntro.remove();
+            } else {
+                alpha -= 0.01;
+                introPlayer.style.backgroundColor = `rgba(25, 23, 24, ${alpha})`;
+                // textIntro.style.color = `rgba(255, 204, 0, ${alpha})`;
+            }
+        }
+    }
+
     const hoverLeft = document.getElementById("hoverLeft");
     const hoverRight = document.getElementById("hoverRight");
     const landscape = document.getElementById("landscape");
