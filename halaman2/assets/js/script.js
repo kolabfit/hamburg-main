@@ -11,10 +11,10 @@ async function UFOEvent() {
     const src = ufoevent.src;
 
     // Temporarily remove the src attribute and then reset it
-    ufoevent.src = '';
-    ufoevent.src = src;
     koin.style.display = "none";
     ufoevent.style.display = "block";
+    ufoevent.src = '';
+    ufoevent.src = src;
     running = true;
 
     await wait(9000);

@@ -79,7 +79,7 @@
             const barangMasuk = document.getElementById("barangMasuk");
 
             function openFrame() {
-                if (posX <= -30) {
+                if (posX <= -60) {
                     clearInterval(move);
                     setTimeout(() => {
                         move = setInterval(closeFrame, 20);
@@ -123,7 +123,7 @@
             const barangMasuk = document.getElementById("barangMasuk");
 
             function openFrame() {
-                if (posX <= -30) {
+                if (posX <= -60) {
                     clearInterval(move);
                     window.top.open("../../page2.html", "_self");
                 } else {
