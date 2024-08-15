@@ -1,134 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HAMBURG</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAMBURG</title>
+        <link rel="stylesheet" href="all-assets/allstyle.css" />
+    </head>
 
-    <link rel="stylesheet" href="all-assets/allstyle.css">
-</head>
+    <body>
+        <audio id="bicycle" autoplay>
+            <source src="/all-assets/bicycle.mp3" type="audio/mpeg" />
+        </audio>
 
-<body>
-    <iframe class="framescreen" src="halaman1/landscape/index.html" frameborder="0" id="landscape"></iframe>
-    <iframe class="framescreen" src="halaman1/oriental/index.html" frameborder="0" id="oriental"></iframe>
-    <div class="hoverscrollleft" onclick="ScrollMobile(event)" id="hoverLeft"></div>
-    <div class="hoverscrollright" onclick="ScrollMobile(event)" id="hoverRight"></div>
+        <audio id="restaurant-ambience" autoplay>
+            <source
+                src="/all-assets/Restaurant Ambience.mp3"
+                type="audio/mpeg"
+            />
+        </audio>
 
-    <!-- Intro Loading -->
-    <div class="intro" id="introPlayer" style="z-index: 101"></div>
-    <!-- <div class="intro" id="introPlayer" style="z-index: 101" onclick="playIntro()">
+        <audio id="cat" autoplay>
+            <source src="/all-assets/cat.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio id="bicycle-bell" autoplay>
+            <source src="/all-assets/bicycle bell.mp3" type="audio/mpeg" />
+        </audio>
+
+        <iframe
+            class="framescreen"
+            src="halaman1/landscape/index.html"
+            frameborder="0"
+            id="landscape"
+        ></iframe>
+        <iframe
+            class="framescreen"
+            src="halaman1/oriental/index.html"
+            frameborder="0"
+            id="oriental"
+        ></iframe>
+        <div
+            class="hoverscrollleft"
+            onclick="ScrollMobile(event)"
+            id="hoverLeft"
+        ></div>
+        <div
+            class="hoverscrollright"
+            onclick="ScrollMobile(event)"
+            id="hoverRight"
+        ></div>
+
+        <!-- Intro Loading -->
+        <div class="intro" id="introPlayer" style="z-index: 101"></div>
+        <!-- <div class="intro" id="introPlayer" style="z-index: 101" onclick="playIntro()">
             <div class="centerClickText" id="centerClickText">
                 <h1 class="introAnimation">Click to Open</h1>
             </div>
         </div> -->
-    <div class="loader" id="loaderPlayer" style="z-index: 102">
-        <div class="loadingimage"></div>
-        <div class="loadingtext">
-            <h3 id="progress">0%</h3>
-            <h3>Loading ...</h3>
+        <div class="loader" id="loaderPlayer" style="z-index: 102">
+            <div class="loadingimage"></div>
+            <div class="loadingtext">
+                <h3 id="progress">0%</h3>
+                <h3>Loading ...</h3>
+            </div>
         </div>
-    </div>
-</body>
 
-<script>
-    window.addEventListener("load", async function() {
-        const loaderPlay = document.getElementById("loaderPlayer");
-        const progress = document.getElementById("progress");
+        <script>
+            // Attach an event listener for the user's interaction
+            window.addEventListener("load", () => {
+                const restaurant = document.getElementById(
+                    "restaurant-ambience"
+                );
+                restaurant.volume = 1;
 
-        for (let i = 0; i < 100; i++) {
-            const progressContent = i + 1 + "%";
-            progress.textContent = progressContent;
-            console.log("Loading ... " + progressContent);
-            await wait(20);
+                // Attempt to play the audio
+                const restaurantPromise = restaurant.play();
+
+                // Check if the play attempt was successful
+                if (restaurantPromise !== undefined) {
+                    restaurantPromise
+                        .then(() => {
+                            // Audio is playing
+                            console.log("Audio playing");
+                        })
+                        .catch((error) => {
+                            // Handle play errors
+                            console.error("Error playing audio:", error);
+                        });
+                }
+
+                // Add the ended event listener
+                restaurant.addEventListener("ended", () => {
+                    restaurant.currentTime = 0;
+                    restaurant.play();
+                });
+                const bicycleAudio = document.getElementById("bicycle");
+                bicycleAudio.volume = 0.1;
+
+                // Attempt to play the audio
+                const playPromise = bicycleAudio.play();
+
+                // Check if the play attempt was successful
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => {
+                            // Audio is playing
+                            console.log("Audio playing");
+                        })
+                        .catch((error) => {
+                            // Handle play errors
+                            console.error("Error playing audio:", error);
+                        });
+                }
+
+                // Add the ended event listener
+                bicycleAudio.addEventListener("ended", () => {
+                    bicycleAudio.currentTime = 0;
+                    bicycleAudio.play();
+                });
+
+                // Repeat cat audio every 5 seconds
+                const catAudio = document.getElementById("cat");
+                catAudio.volume = 0.5;
+
+                // Function to play the cat audio repeatedly
+                function playCatAudio() {
+                    catAudio.currentTime = 0;
+                    catAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Repeat cat audio every 5 seconds
+                const bellAudio = document.getElementById("bicycle-bell");
+                bellAudio.volume = 0.5;
+
+                // Function to play the cat audio repeatedly
+                function playbellAudio() {
+                    bellAudio.currentTime = 0;
+                    bellAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Play once and then set an interval
+                playCatAudio();
+                setInterval(playCatAudio, 5000);
+
+                // Play once and then set an interval
+                playbellAudio();
+                setInterval(playbellAudio, 7000);
+            });
+        </script>
+    </body>
+
+    <script>
+        window.addEventListener("load", async function () {
+            const loaderPlay = document.getElementById("loaderPlayer");
+            const progress = document.getElementById("progress");
+
+            for (let i = 0; i < 100; i++) {
+                const progressContent = i + 1 + "%";
+                progress.textContent = progressContent;
+                console.log("Loading ... " + progressContent);
+                await wait(20);
+            }
+
+            loaderPlay.remove();
+            playIntro();
+        });
+
+        function wait(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
         }
 
-        loaderPlay.remove();
-        playIntro();
-    });
+        // let done = false;
 
-    function wait(ms) {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    }
+        function playIntro() {
+            // if (done) {
+            //     return;
+            // }
 
-    // let done = false;
+            // done = true;
 
-    function playIntro() {
-        // if (done) {
-        //     return;
-        // }
+            let intro = null;
+            let alpha = 1;
+            const introPlayer = document.getElementById("introPlayer");
+            // const textIntro = document.getElementById("centerClickText");
 
-        // done = true;
+            clearInterval(intro);
+            intro = setInterval(introframe, 20);
 
-        let intro = null;
-        let alpha = 1;
-        const introPlayer = document.getElementById("introPlayer");
-        // const textIntro = document.getElementById("centerClickText");
+            function introframe() {
+                if (alpha <= 0) {
+                    done = true;
+                    clearInterval(intro);
+                    introPlayer.remove();
+                    // textIntro.remove();
+                } else {
+                    alpha -= 0.01;
+                    introPlayer.style.backgroundColor = `rgba(25, 23, 24, ${alpha})`;
+                    // textIntro.style.color = `rgba(255, 204, 0, ${alpha})`;
+                }
+            }
+        }
 
-        clearInterval(intro);
-        intro = setInterval(introframe, 20);
+        const hoverLeft = document.getElementById("hoverLeft");
+        const hoverRight = document.getElementById("hoverRight");
+        const landscape = document.getElementById("landscape");
+        const oriental = document.getElementById("oriental");
 
-        function introframe() {
-            if (alpha <= 0) {
-                done = true;
-                clearInterval(intro);
-                introPlayer.remove();
-                // textIntro.remove();
+        let translateX = -40;
+
+        function ScrollMobile(e) {
+            const pageWidth = window.innerWidth;
+
+            const mouseX = e.clientX;
+
+            if (mouseX < pageWidth / 2) {
+                console.log("Left side");
+                if (translateX < 0) {
+                    translateX += 1;
+                }
             } else {
-                alpha -= 0.01;
-                introPlayer.style.backgroundColor = `rgba(25, 23, 24, ${alpha})`;
-                // textIntro.style.color = `rgba(255, 204, 0, ${alpha})`;
+                console.log("Right side");
+                if (translateX > -80) {
+                    translateX -= 1;
+                }
             }
-        }
-    }
 
-    const hoverLeft = document.getElementById("hoverLeft");
-    const hoverRight = document.getElementById("hoverRight");
-    const landscape = document.getElementById("landscape");
-    const oriental = document.getElementById("oriental");
-
-    let translateX = -40;
-
-    function ScrollMobile(e) {
-        const pageWidth = window.innerWidth;
-        
-        const mouseX = e.clientX;
-
-        if (mouseX < pageWidth / 2) {
-            console.log("Left side");
-            if (translateX < 0) {
-                translateX += 1;
-            }
-        } else {
-            console.log("Right side");
-            if (translateX > -80) {
-                translateX -= 1;
-            }
+            oriental.style.transform = `translateX(${translateX}%)`;
         }
 
-        oriental.style.transform = `translateX(${translateX}%)`;
-    }
+        window.addEventListener("resize", function () {
+            setPage();
+        });
 
-    window.addEventListener("resize", function() {
-        setPage();
-    });
+        window.addEventListener("load", function () {
+            setPage();
+        });
 
-    window.addEventListener("load", function() {
-        setPage();
-    });
-
-    function setPage() {     
-        if (window.matchMedia("(orientation: landscape)").matches) {
-            landscape.style.display = "block";
-            oriental.style.display = "none";
-            hoverLeft.style.display = "none";
-            hoverRight.style.display = "none";
-        } else {
-            landscape.style.display = "none";
-            oriental.style.display = "block";
-            hoverLeft.style.display = "block";
-            hoverRight.style.display = "block";
+        function setPage() {
+            if (window.matchMedia("(orientation: landscape)").matches) {
+                landscape.style.display = "block";
+                oriental.style.display = "none";
+                hoverLeft.style.display = "none";
+                hoverRight.style.display = "none";
+            } else {
+                landscape.style.display = "none";
+                oriental.style.display = "block";
+                hoverLeft.style.display = "block";
+                hoverRight.style.display = "block";
+            }
         }
-    }
-</script>
+    </script>
 </html>

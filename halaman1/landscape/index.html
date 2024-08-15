@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HAMBURG</title>
-    <link rel="stylesheet" href="../assets/css-landscape/style.css" />
-    <link rel="stylesheet" href="../../all-assets/allstyle.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HAMBURG</title>
+        <link rel="stylesheet" href="../assets/css-landscape/style.css" />
+        <link rel="stylesheet" href="../../all-assets/allstyle.css" />
 
         <script>
             let running = false;
@@ -139,25 +139,6 @@
     </head>
 
     <body>
-        <audio id="bicycle" autoplay>
-            <source src="/all-assets/bicycle.mp3" type="audio/mpeg" />
-        </audio>
-
-        <audio id="restaurant-ambience" autoplay>
-            <source
-                src="/all-assets/Restaurant Ambience.mp3"
-                type="audio/mpeg"
-            />
-        </audio>
-
-        <audio id="cat" autoplay>
-            <source src="/all-assets/cat.mp3" type="audio/mpeg" />
-        </audio>
-
-        <audio id="bicycle-bell" autoplay>
-            <source src="/all-assets/bicycle bell.mp3" type="audio/mpeg" />
-        </audio>
-
         <div class="container-main" id="container-main">
             <!-- Awan -->
             <div id="awan" class="layer1"></div>
@@ -224,99 +205,5 @@
                 onmouseover="animateBurgerRocket()"
             ></div>
         </div>
-
-        <script>
-            // Attach an event listener for the user's interaction
-            window.addEventListener("load", () => {
-                const restaurant = document.getElementById("restaurant-ambience");
-                restaurant.volume = 1;
-
-                // Attempt to play the audio
-                const restaurantPromise = restaurant.play();
-
-                // Check if the play attempt was successful
-                if (restaurantPromise !== undefined) {
-                    restaurantPromise
-                        .then(() => {
-                            // Audio is playing
-                            console.log("Audio playing");
-                        })
-                        .catch((error) => {
-                            // Handle play errors
-                            console.error("Error playing audio:", error);
-                        });
-                }
-
-                // Add the ended event listener
-                restaurant.addEventListener("ended", () => {
-                    restaurant.currentTime = 0;
-                    restaurant.play();
-                });
-                const bicycleAudio = document.getElementById("bicycle");
-                bicycleAudio.volume = 0.1;
-
-                // Attempt to play the audio
-                const playPromise = bicycleAudio.play();
-
-                // Check if the play attempt was successful
-                if (playPromise !== undefined) {
-                    playPromise
-                        .then(() => {
-                            // Audio is playing
-                            console.log("Audio playing");
-                        })
-                        .catch((error) => {
-                            // Handle play errors
-                            console.error("Error playing audio:", error);
-                        });
-                }
-
-                // Add the ended event listener
-                bicycleAudio.addEventListener("ended", () => {
-                    bicycleAudio.currentTime = 0;
-                    bicycleAudio.play();
-                });
-
-                // Repeat cat audio every 5 seconds
-                const catAudio = document.getElementById("cat");
-                catAudio.volume = 0.5;
-
-                // Function to play the cat audio repeatedly
-                function playCatAudio() {
-                    catAudio.currentTime = 0;
-                    catAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Repeat cat audio every 5 seconds
-                const bellAudio = document.getElementById("bicycle-bell");
-                bellAudio.volume = 0.5;
-
-                // Function to play the cat audio repeatedly
-                function playbellAudio() {
-                    bellAudio.currentTime = 0;
-                    bellAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Play once and then set an interval
-                playCatAudio();
-                setInterval(playCatAudio, 5000);
-
-                // Play once and then set an interval
-                playbellAudio();
-                setInterval(playbellAudio, 7000);
-            });
-
-            //Make bycicle sound and restaurant ambience sound looping
-            document.getElementById("bicycle").loop = true;
-            document.getElementById("restaurant-ambience").loop = true;
-        </script>
-</body>
-</body>
-
     </body>
-
 </html>
