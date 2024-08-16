@@ -9,8 +9,37 @@
     <link rel="stylesheet" href="../all-assets/allstyle.css" />
 
     <script>
-        const rocketTerbangAudio = new Audio("assets/contents/hamburgrocketlaunch.wav");
-        rocketTerbangAudio.loop = true;
+        const bycicleAudio = new Audio("assets/sounds/bicycle.mp3");
+        const bycicleBellAudio = new Audio("assets/sounds/bicycle bell.mp3");
+        bycicleAudio.loop = true;
+        bycicleAudio.volume = 0.25;
+        bycicleBellAudio.loop = false;
+
+        let isPlayingBycicle = false;
+
+        function playBycicle() {
+            if (isPlayingBycicle) {
+                return;
+            }
+
+            isPlayingBycicle = true;
+            bycicleAudio.play();
+            bycicleBellAudio.play();
+            
+            setTimeout(() => {
+                isPlayingBycicle = false;
+            }, 4000);
+        }
+
+        const catMeow = new Audio("assets/sounds/cat.mp3");
+        catMeow.loop = false;
+
+        function catOnHover() {
+            catMeow.currentTime = 0;
+            catMeow.play();
+        }
+        const rocketTerbangAudio = new Audio("assets/sounds/hamburgrocketlaunch.wav");
+        rocketTerbangAudio.loop = false;
         let running = false;
 
         function animateBurgerRocket() {
@@ -64,6 +93,13 @@
             rumah.style.transform = `translateX(${offsetRumah}px)`;
         });
 
+        const soundOpenDoor = new Audio("assets/sounds/opendoor.mp3");
+        const soundWind = new Audio("assets/sounds/anginmasuk.mp3");
+        soundOpenDoor.loop = false;
+        soundWind.loop = true;
+        soundOpenDoor.volume = 0.5;
+        soundWind.volume = 0.5;
+
         let runningDoor = false;
         let clickedDoor = false;
 
@@ -71,6 +107,9 @@
             if (runningDoor || clickedDoor) {
                 return;
             }
+
+            soundOpenDoor.play();
+            soundWind.play();
 
             runningDoor = true;
 
@@ -103,6 +142,10 @@
                 if (posX >= 0) {
                     clearInterval(move);
                     barangMasuk.style.display = "none";
+                    soundOpenDoor.pause();
+                    soundWind.pause();
+                    soundOpenDoor.currentTime = 0;
+                    soundWind.currentTime = 0;
                     runningDoor = false;
                 } else {
                     posX += 0.8;
@@ -115,6 +158,9 @@
             if (clickedDoor || runningDoor) {
                 return;
             }
+
+            soundOpenDoor.play();
+            soundWind.play();
 
             clickedDoor = true;
             let move = null;
@@ -130,6 +176,10 @@
             function openFrame() {
                 if (posX <= -60) {
                     clearInterval(move);
+                    soundOpenDoor.pause();
+                    soundWind.pause();
+                    soundOpenDoor.currentTime = 0;
+                    soundWind.currentTime = 0;
                     window.top.open("../page2.html", "_self");
                 } else {
                     posX -= 1;
@@ -189,23 +239,21 @@
             <img
                 src="assets/contents/sepeda.gif"
                 alt="sepeda"
-                class="sepeda" />
+                class="sepeda" onclick=""/>
             <div alt="flyingburger" class="flyingburger"></div>
         </div>
 
         <!-- Efek Barang Masuk -->
-        <div class="layer7" style="z-index: 8">
-            <div
-                id="barangMasuk"
-                alt="barangMasuk"
-                class="barangMasuk"></div>
+        <div class="layer7" style="z-index: 7">
+            <div id="barangMasuk" alt="barangMasuk" class="barangMasuk"></div>
         </div>
 
         <!-- Efek Hover -->
-        <div
-            class="hover"
-            style="z-index: 100"
-            onmouseover="animateBurgerRocket()"></div>
+        <div class="layer8" style="z-index: 8">
+            <div class="burgerHover" onmouseover="animateBurgerRocket()"></div>
+            <div class="catHover" onclick="catOnHover()"></div>
+            <div class="BycicleHover" onclick="playBycicle()"></div>
+        </div>
     </div>
 </body>
 
