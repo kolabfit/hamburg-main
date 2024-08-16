@@ -9,14 +9,18 @@
     </head>
 
     <body>
-        <audio
-            src="../assets/sound/hamburg rocket launch.wav"
-            id="burger-audio"
-        ></audio>
+        <audio src="../assets/sound/rocket.wav" id="burger-audio"></audio>
 
         <audio src="../assets/sound/cat.mp3" id="cat-audio"></audio>
         <audio src="../assets/sound/open door.mp3" id="door-audio"></audio>
         <audio src="../assets/sound/angin masuk 2.mp3" id="wind-audio"></audio>
+        <audio src="../assets/sound/bicycle.mp3" id="bicycle-audio"></audio>
+        <audio src="../assets/sound/cat.mp3" id="cat-audio"></audio>
+        <audio
+            src="../assets/sound/bicycle bell.mp3"
+            id="bicycle-bell-audio"
+        ></audio>
+        <audio src="../assets/sound/cat.mp3" id="cat-audio"></audio>
 
         <div class="container-main" id="container-main">
             <!-- Awan -->
@@ -45,11 +49,7 @@
             <!-- Main -->
             <div class="layer5" style="z-index: 5">
                 <div class="bendera"></div>
-                <div
-                    class="kucing"
-                    onmouseover="catOnHover()"
-                    style="z-index: 101"
-                ></div>
+                <div class="kucing"></div>
                 <div class="alien"></div>
                 <div class="koran"></div>
                 <div class="table1"></div>
@@ -62,7 +62,12 @@
 
             <!-- Trotoar -->
             <div class="layer6" style="z-index: 6">
-                <div alt="Trotoar" class="trotoar"></div>
+                <div
+                    alt="Trotoar"
+                    class="trotoar"
+                    onmouseover="bycicleAudioOn()"
+                    onmouseleave="bycicleAudioOff()"
+                ></div>
                 <div alt="asep" class="asep"></div>
                 <img
                     src="../assets/contents/sepeda.gif"
@@ -87,10 +92,20 @@
                 style="z-index: 100"
                 onmouseover="animateBurgerRocket()"
             ></div>
+
+            <!-- Efek Suara Sepeda -->
         </div>
 
         <script>
             let running = false;
+
+            function bycicleAudioOn() {
+                document.getElementById("bicycle-audio").play();
+            }
+
+            function bycicleAudioOff() {
+                document.getElementById("bicycle-audio").pause();
+            }
 
             function catOnHover() {
                 document.getElementById("cat-audio").play();
@@ -124,6 +139,39 @@
                     }
                 }
             }
+
+            // Repeat cat audio every 5 seconds
+            const bellAudio = document.getElementById("bicycle-bell-audio");
+            bellAudio.volume = 0.5;
+
+            // Repeat cat audio every 5 seconds
+            const catAudio = document.getElementById("cat-audio");
+            catAudio.volume = 0.5;
+
+            window.addEventListener("load", function () {
+                // Function to play the cat audio repeatedly
+                function playbellAudio() {
+                    bellAudio.currentTime = 0;
+                    bellAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Play once and then set an interval
+                playbellAudio();
+                setInterval(playbellAudio, 7000);
+
+                function playcatAudio() {
+                    catAudio.currentTime = 0;
+                    catAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Play once and then set an interval
+                playcatAudio();
+                setInterval(playcatAudio, 5000);
+            });
 
             document.addEventListener("mousemove", function (e) {
                 const awan = document.getElementById("awan");
@@ -187,6 +235,7 @@
                 function closeFrame() {
                     if (posX >= 0) {
                         document.getElementById("wind-audio").pause();
+                        document.getElementById("door-audio").play();
                         clearInterval(move);
                         barangMasuk.style.display = "none";
                         runningDoor = false;
