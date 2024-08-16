@@ -9,25 +9,6 @@
     </head>
 
     <body>
-        <audio id="bicycle">
-            <source src="all-assets/bicycle.mp3" type="audio/mpeg" />
-        </audio>
-
-        <audio id="restaurant-ambience">
-            <source
-                src="all-assets/Restaurant Ambience.mp3"
-                type="audio/mpeg"
-            />
-        </audio>
-
-        <audio id="cat" autoplay>
-            <source src="all-assets/cat.mp3" type="audio/mpeg" />
-        </audio>
-
-        <audio id="bicycle-bell" autoplay>
-            <source src="all-assets/bicycle bell.mp3" type="audio/mpeg" />
-        </audio>
-
         <iframe
             class="framescreen"
             src="halaman1/landscape/index.html"
@@ -65,85 +46,6 @@
                 <h3>Loading ...</h3>
             </div>
         </div>
-
-        <script>
-            let mousemove = 0;
-
-            // Attach an event listener for the user's interaction
-            document.body.addEventListener("mousemove", () => {
-                if (mousemove > 0) {
-                    return;
-                }
-
-                // Repeat cat audio every 5 seconds
-                const restaurantAudio = document.getElementById(
-                    "restaurant-ambience"
-                );
-                restaurantAudio.volume = 1;
-
-                // Function to play the cat audio repeatedly
-                function playrestaurantAudio() {
-                    restaurantAudio.currentTime = 0;
-                    restaurantAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Repeat cat audio every 5 seconds
-                const bicycleAudio = document.getElementById("bicycle");
-                bicycleAudio.volume = 0.1;
-
-                // Function to play the cat audio repeatedly
-                function playbicycleAudio() {
-                    bicycleAudio.currentTime = 0;
-                    bicycleAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Repeat cat audio every 5 seconds
-                const catAudio = document.getElementById("cat");
-                catAudio.volume = 0.5;
-
-                // Function to play the cat audio repeatedly
-                function playCatAudio() {
-                    catAudio.currentTime = 0;
-                    catAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Repeat cat audio every 5 seconds
-                const bellAudio = document.getElementById("bicycle-bell");
-                bellAudio.volume = 0.5;
-
-                // Function to play the cat audio repeatedly
-                function playbellAudio() {
-                    bellAudio.currentTime = 0;
-                    bellAudio.play().catch((error) => {
-                        console.error("Error playing cat audio:", error);
-                    });
-                }
-
-                // Play once and then set an interval
-                playCatAudio();
-                setInterval(playCatAudio, 5000);
-
-                // Play once and then set an interval
-                playbellAudio();
-                setInterval(playbellAudio, 7000);
-
-                // Play once and then set an interval
-                playrestaurantAudio();
-                setInterval(playrestaurantAudio, 179000);
-
-                // Play once and then set an interval
-                playbicycleAudio();
-                setInterval(playbicycleAudio, 179000);
-
-                mousemove++;
-            });
-        </script>
     </body>
 
     <script>

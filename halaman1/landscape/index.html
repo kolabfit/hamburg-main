@@ -6,11 +6,99 @@
         <title>HAMBURG</title>
         <link rel="stylesheet" href="../assets/css-landscape/style.css" />
         <link rel="stylesheet" href="../../all-assets/allstyle.css" />
+    </head>
+
+    <body>
+        <audio
+            src="../assets/sound/hamburg rocket launch.wav"
+            id="burger-audio"
+        ></audio>
+
+        <audio src="../assets/sound/cat.mp3" id="cat-audio"></audio>
+        <audio src="../assets/sound/open door.mp3" id="door-audio"></audio>
+        <audio src="../assets/sound/angin masuk 2.mp3" id="wind-audio"></audio>
+
+        <div class="container-main" id="container-main">
+            <!-- Awan -->
+            <div id="awan" class="layer1"></div>
+
+            <!-- Pohon -->
+            <div id="pohon" class="layer2" style="z-index: 2"></div>
+
+            <!-- Rumah -->
+            <div id="rumah" class="layer3" style="z-index: 3"></div>
+
+            <!-- Burger Roket -->
+            <div id="burger" class="layer4" style="z-index: 4"></div>
+
+            <!-- Pintu -->
+            <div
+                id="door-hover"
+                class="doortrigger"
+                style="z-index: 9"
+                onmouseenter="animateDoor()"
+                onclick="enterDoor()"
+            ></div>
+            <div class="black" style="z-index: 4"></div>
+            <div id="door" class="door" style="z-index: 4"></div>
+
+            <!-- Main -->
+            <div class="layer5" style="z-index: 5">
+                <div class="bendera"></div>
+                <div
+                    class="kucing"
+                    onmouseover="catOnHover()"
+                    style="z-index: 101"
+                ></div>
+                <div class="alien"></div>
+                <div class="koran"></div>
+                <div class="table1"></div>
+                <div class="table2"></div>
+                <div class="table3"></div>
+                <div class="waiter"></div>
+                <div class="pepefinker"></div>
+                <div class="bola" id="bola"></div>
+            </div>
+
+            <!-- Trotoar -->
+            <div class="layer6" style="z-index: 6">
+                <div alt="Trotoar" class="trotoar"></div>
+                <div alt="asep" class="asep"></div>
+                <img
+                    src="../assets/contents/sepeda.gif"
+                    alt="sepeda"
+                    class="sepeda"
+                />
+                <div alt="flyingburger" class="flyingburger"></div>
+            </div>
+
+            <!-- Efek Barang Masuk -->
+            <div class="layer7" style="z-index: 8">
+                <div
+                    id="barangMasuk"
+                    alt="barangMasuk"
+                    class="barangMasuk"
+                ></div>
+            </div>
+
+            <!-- Efek Hover -->
+            <div
+                class="hover"
+                style="z-index: 100"
+                onmouseover="animateBurgerRocket()"
+            ></div>
+        </div>
 
         <script>
             let running = false;
 
+            function catOnHover() {
+                document.getElementById("cat-audio").play();
+                console.log("Cat sound played");
+            }
+
             function animateBurgerRocket() {
+                document.getElementById("burger-audio").play();
                 if (running) {
                     return;
                 }
@@ -62,6 +150,9 @@
             let clickedDoor = false;
 
             function animateDoor() {
+                document.getElementById("door-audio").play();
+                document.getElementById("wind-audio").play();
+
                 if (runningDoor || clickedDoor) {
                     return;
                 }
@@ -95,6 +186,7 @@
 
                 function closeFrame() {
                     if (posX >= 0) {
+                        document.getElementById("wind-audio").pause();
                         clearInterval(move);
                         barangMasuk.style.display = "none";
                         runningDoor = false;
@@ -136,74 +228,5 @@
                 }
             }
         </script>
-    </head>
-
-    <body>
-        <div class="container-main" id="container-main">
-            <!-- Awan -->
-            <div id="awan" class="layer1"></div>
-
-            <!-- Pohon -->
-            <div id="pohon" class="layer2" style="z-index: 2"></div>
-
-            <!-- Rumah -->
-            <div id="rumah" class="layer3" style="z-index: 3"></div>
-
-            <!-- Burger Roket -->
-            <div id="burger" class="layer4" style="z-index: 4"></div>
-
-            <!-- Pintu -->
-            <div
-                id="door-hover"
-                class="doortrigger"
-                style="z-index: 9"
-                onmouseenter="animateDoor()"
-                onclick="enterDoor()"
-            ></div>
-            <div class="black" style="z-index: 4"></div>
-            <div id="door" class="door" style="z-index: 4"></div>
-
-            <!-- Main -->
-            <div class="layer5" style="z-index: 5">
-                <div class="bendera"></div>
-                <div class="kucing"></div>
-                <div class="alien"></div>
-                <div class="koran"></div>
-                <div class="table1"></div>
-                <div class="table2"></div>
-                <div class="table3"></div>
-                <div class="waiter"></div>
-                <div class="pepefinker"></div>
-                <div class="bola" id="bola"></div>
-            </div>
-
-            <!-- Trotoar -->
-            <div class="layer6" style="z-index: 6">
-                <div alt="Trotoar" class="trotoar"></div>
-                <div alt="asep" class="asep"></div>
-                <img
-                    src="../assets/contents/sepeda.gif"
-                    alt="sepeda"
-                    class="sepeda"
-                />
-                <div alt="flyingburger" class="flyingburger"></div>
-            </div>
-
-            <!-- Efek Barang Masuk -->
-            <div class="layer7" style="z-index: 8">
-                <div
-                    id="barangMasuk"
-                    alt="barangMasuk"
-                    class="barangMasuk"
-                ></div>
-            </div>
-
-            <!-- Efek Hover -->
-            <div
-                class="hover"
-                style="z-index: 100"
-                onmouseover="animateBurgerRocket()"
-            ></div>
-        </div>
     </body>
 </html>
