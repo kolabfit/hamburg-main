@@ -9,11 +9,11 @@
     </head>
 
     <body>
-        <audio id="bicycle" autoplay>
+        <audio id="bicycle">
             <source src="all-assets/bicycle.mp3" type="audio/mpeg" />
         </audio>
 
-        <audio id="restaurant-ambience" autoplay>
+        <audio id="restaurant-ambience">
             <source
                 src="all-assets/Restaurant Ambience.mp3"
                 type="audio/mpeg"
@@ -67,58 +67,39 @@
         </div>
 
         <script>
+            let mousemove = 0;
+
             // Attach an event listener for the user's interaction
-            window.addEventListener("load", () => {
-                const restaurant = document.getElementById(
-                    "restaurant-ambience"
-                );
-                restaurant.volume = 1;
-
-                // Attempt to play the audio
-                const restaurantPromise = restaurant.play();
-
-                // Check if the play attempt was successful
-                if (restaurantPromise !== undefined) {
-                    restaurantPromise
-                        .then(() => {
-                            // Audio is playing
-                            console.log("Audio playing");
-                        })
-                        .catch((error) => {
-                            // Handle play errors
-                            console.error("Error playing audio:", error);
-                        });
+            document.body.addEventListener("mousemove", () => {
+                if (mousemove > 0) {
+                    return;
                 }
 
-                // Add the ended event listener
-                restaurant.addEventListener("ended", () => {
-                    restaurant.currentTime = 0;
-                    restaurant.play();
-                });
+                // Repeat cat audio every 5 seconds
+                const restaurantAudio = document.getElementById(
+                    "restaurant-ambience"
+                );
+                restaurantAudio.volume = 1;
+
+                // Function to play the cat audio repeatedly
+                function playrestaurantAudio() {
+                    restaurantAudio.currentTime = 0;
+                    restaurantAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
+
+                // Repeat cat audio every 5 seconds
                 const bicycleAudio = document.getElementById("bicycle");
                 bicycleAudio.volume = 0.1;
 
-                // Attempt to play the audio
-                const playPromise = bicycleAudio.play();
-
-                // Check if the play attempt was successful
-                if (playPromise !== undefined) {
-                    playPromise
-                        .then(() => {
-                            // Audio is playing
-                            console.log("Audio playing");
-                        })
-                        .catch((error) => {
-                            // Handle play errors
-                            console.error("Error playing audio:", error);
-                        });
-                }
-
-                // Add the ended event listener
-                bicycleAudio.addEventListener("ended", () => {
+                // Function to play the cat audio repeatedly
+                function playbicycleAudio() {
                     bicycleAudio.currentTime = 0;
-                    bicycleAudio.play();
-                });
+                    bicycleAudio.play().catch((error) => {
+                        console.error("Error playing cat audio:", error);
+                    });
+                }
 
                 // Repeat cat audio every 5 seconds
                 const catAudio = document.getElementById("cat");
@@ -151,6 +132,16 @@
                 // Play once and then set an interval
                 playbellAudio();
                 setInterval(playbellAudio, 7000);
+
+                // Play once and then set an interval
+                playrestaurantAudio();
+                setInterval(playrestaurantAudio, 179000);
+
+                // Play once and then set an interval
+                playbicycleAudio();
+                setInterval(playbicycleAudio, 179000);
+
+                mousemove++;
             });
         </script>
     </body>
