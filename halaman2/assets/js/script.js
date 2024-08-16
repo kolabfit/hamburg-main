@@ -28,7 +28,7 @@ async function UFOEvent() {
     }
 }
 
-const audio = new Audio("../assets/contents/layer 10/ringingphone.mp3");
+const audio = new Audio("assets/contents/layer 10/ringingphone.mp3");
 const staticphone = document.getElementById("wallphone");
 const staticphonecell = document.getElementById("wallphonecell");
 const ringingphone = document.getElementById("ringingwallphone");
@@ -59,6 +59,7 @@ async function playRingingPhone() {
 
 function stopRingingPhone() {
     audio.pause();
+    audio.currentTime = 0;
     staticphone.style.display = "block";
     staticphonecell.style.display = "block";
     ringingphone.style.display = "none";
