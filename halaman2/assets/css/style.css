@@ -393,11 +393,10 @@ body{
     position: fixed;
     background-image: url('../contents/layer10/ufo-ezgif.com-video-to-webp-converter.webp');
     background-repeat: no-repeat;
-    background-size: 85% 80%;
-    transform: translate(1%, 16%);
+    background-size: 100% 100%;
+    left: -5%;
     width: 100%;
     height: 100%;
-    opacity: 5;
 }
 
 .pillar{
