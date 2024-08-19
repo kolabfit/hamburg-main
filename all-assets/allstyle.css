@@ -1,5 +1,6 @@
 * {
     cursor: url(CURSORHAMBURG.png) 30 30, crosshair;
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
@@ -115,4 +116,15 @@ body {
     color: white;
     font-size: 1.4em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+@media screen and (max-width: 550px) {
+    .framescreen {
+        width: 1800px;
+    }
+
+    * {
+        overflow-x: auto;
+    }
 }
