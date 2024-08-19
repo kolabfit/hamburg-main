@@ -169,12 +169,32 @@ div {
 }
 
 .bola {
+    z-index: 50;
     position: absolute;
     top: 31.3%;
-    left: 78%;
-    width: 8%;
+    left: 81%;
+    width: 3%;
     height: 18%;
-    background-image: url('../contents/bola.webp');
+    animation: swingBola 2s infinite ease-in-out alternate;
+}
+
+.bola:hover {
+    animation: swingBola 1s infinite ease-in-out alternate; 
+}
+
+@keyframes swingBola{
+    0% {
+        transform: rotate(-9deg); /* Mulai dari ayunan ke kiri */
+        left: 80%;
+     }
+    50% {
+        transform: rotate(9deg); /* Ayunan ke kanan */
+        left: 79%;
+    }
+    100% {
+        transform: rotate(-9deg); /* Kembali ke ayunan ke kiri */
+        left: 80%;
+    }
 }
 
 .trotoar {

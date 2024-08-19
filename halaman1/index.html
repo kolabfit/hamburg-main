@@ -38,7 +38,7 @@
             catMeow.currentTime = 0;
             catMeow.play();
         }
-        
+
         const rocketTerbangAudio = new Audio("assets/sounds/hamburgrocketlaunch.mp3");
         rocketTerbangAudio.loop = false;
         let running = false;
@@ -235,7 +235,6 @@
             <div class="table3"></div>
             <div class="waiter"></div>
             <div class="pepefinker"></div>
-            <div class="bola" id="bola"></div>
         </div>
 
         <!-- Trotoar -->
@@ -256,6 +255,10 @@
 
         <!-- Efek Hover -->
         <div class="layer8" style="z-index: 8">
+            <img
+                src="assets/contents/bola.png"
+                id="bola"
+                class="bola" />
             <div class="burgerHover" onmouseover="animateBurgerRocket()"></div>
             <div class="catHover" onmouseenter="catPlaySound()"></div>
             <div class="BycicleHover" onclick="playBycicle()"></div>
