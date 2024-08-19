@@ -155,6 +155,7 @@ body {
     }
 
     .framescreen {
+        position: sticky;
         width: 1900px;
     }
 
