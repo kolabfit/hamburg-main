@@ -160,6 +160,7 @@ body {
 
     .framescreen {
         width: 1900px;
+        height: 100%;
     }
 
     * {
