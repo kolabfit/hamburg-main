@@ -42,7 +42,7 @@ body {
 
 #oriental {
     width: 500%;
-    transform: translateX(-40%);
+/*     transform: translateX(-40%); */
 }
 
 .intro {
@@ -121,7 +121,7 @@ body {
 
 @media screen and (max-width: 550px) {
     .framescreen {
-        width: 1800px;
+        width: 1900px;
     }
 
     * {
