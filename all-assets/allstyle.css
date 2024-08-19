@@ -159,12 +159,11 @@ body {
     }
 
     .framescreen {
-        width: 500%;
-        height: 100%;
+        width: 1900px;
     }
 
     * {
-        overflow-x: auto;
+        overflow-x: scroll;
         overflow-y: hidden;
     }
 }

@@ -96,3 +96,8 @@ function playIntro() {
 //         hoverRight.style.display = "block";
 //     }
 // }
+
+window.addEventListener("wheel", function () {
+    console.log("Scrolling");
+    window.scrollY = 0;
+});
