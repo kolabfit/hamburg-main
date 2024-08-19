@@ -62,12 +62,16 @@ div {
     height: 24.8%;
 }
 
+.doortrigger:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .clickanimation {
     position: absolute;
     top: 52%;
-    left: 48.5%;
-    width: 3%;
-    height: 5%;
+    left: 47.5%;
+    width: 5%;
+    height: 7%;
     background-image: url('../../../all-assets/clickanimation.webp');
 }
 
@@ -180,6 +184,7 @@ div {
 
 .bola:hover {
     animation: swingBola 1s infinite ease-in-out alternate; 
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 @keyframes swingBola{
@@ -260,12 +265,20 @@ div {
     height: 10%;
 }
 
+.burgerHover:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .catHover {
     position: absolute;
     top: 71%;
     left: 49.5%;
     width: 6%;
     height: 9%;
+}
+
+.catHover:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .BycicleHover {
@@ -276,4 +289,8 @@ div {
     height: 35%;
     transform: translateY(-50%) translateX(100vw);
     animation: speedMovement 10s infinite ease-in-out; 
+}
+
+.BycicleHover:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }

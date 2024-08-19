@@ -104,6 +104,7 @@ body{
 
 .tag-order:hover {
     animation: swing 1s infinite ease-in-out alternate; 
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .nogwai{
@@ -139,6 +140,10 @@ body{
     height: 5%;
 }
 
+.trigger1:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .trigger2{
     position: fixed;
     /* background-color: yellow; */
@@ -148,6 +153,10 @@ body{
     width: 17%;
     height: 10%;
     transform: rotate(8deg);
+}
+
+.trigger2:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .trigger3{
@@ -160,6 +169,10 @@ body{
     height: 12%;
 }
 
+.trigger3:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .trigger4{
     position: fixed;
     /* background-color: aqua; */
@@ -170,6 +183,9 @@ body{
     height: 6%;
 }
 
+.trigger4:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
 
 .trigger5{
     position: fixed;
@@ -181,6 +197,10 @@ body{
     height: 5%;
 }   
 
+.trigger5:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .trigger6{
     position: fixed;
     /* background-color: yellow; */
@@ -189,6 +209,10 @@ body{
     transform: translate(-50%, -60%);
     width: 3%;
     height: 5%;
+}
+
+.trigger6:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .trigger7{
@@ -201,6 +225,10 @@ body{
     height: 28%;
 }
 
+.trigger7:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .trigger8{
     position: fixed;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -209,6 +237,10 @@ body{
     left: 48%;
     width: 8%;
     height: 8%;
+}
+
+.trigger8:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .bar-chair{
@@ -232,14 +264,44 @@ body{
     height: 100%;
 }
 
-.service-table{
+.pelayan{
     position: fixed;
-    background-image: url('../contents/pelayanlap-ezgif.com-video-to-webp-converter.webp');
+    background-image: url('../contents/pelayan.png');
     background-size: 10% 25%;
     background-repeat: no-repeat;
     transform: translate(58%, 43%);
     width: 100%;
     height: 100%;
+}
+
+.tanganpelayan{
+    position: fixed;
+    top: 44%;
+    left: 58%;
+    width: 10%;
+    height: 20%;
+    transform-origin: top center;
+    animation: tanganGerak 5s infinite ease-in-out alternate;
+}
+
+.tanganpelayan:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+    animation: tanganGerak 1s infinite ease-in-out alternate; 
+}
+
+@keyframes tanganGerak{
+    0% {
+        left: 58%;
+        transform: rotate(-5deg);
+    }
+    50%{
+        left: 58.1%;
+        transform: rotate(5deg);
+    }
+    100%{
+        left: 58%;
+        transform: rotate(-5deg);
+    }
 }
 
 .statue{
@@ -295,6 +357,7 @@ body{
     left: 20.7%;
     width: 7%;
     height: 20%;
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .front-tab{
@@ -366,7 +429,8 @@ body{
 }
 
 .lamp:hover {
- animation: swingLampu 1s infinite ease-in-out alternate; 
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+    animation: swingLampu 1s infinite ease-in-out alternate; 
 }
 
 .clickanimation {
@@ -377,9 +441,9 @@ body{
     background-size: 100% 100%;
     background-position: center;
     top: 75%;
-    left: 34.5%;
-    width: 3%;
-    height: 5%;
+    left: 33.5%;
+    width: 5%;
+    height: 7%;
     background-image: url('../../../all-assets/clickanimation.webp');
 }
 
