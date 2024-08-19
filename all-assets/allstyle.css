@@ -86,13 +86,13 @@ body {
     font-size: 1.9em;
 } */
 
-.introAnimation {
+/* .introAnimation {
     font-size: 1.85em;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 .loadingimage {
     position: absolute;
@@ -118,25 +118,52 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-@media screen and (max-width: 550px) {
-    .framescreen {
-        width: 500%;
+@media screen and (max-width: 700px) {
+    
+    .intro {
+        position: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 100%;
         height: 100%;
+        z-index: 2;
+        background-color: rgba(25, 23, 24, 1);
+    }
+
+    .loader {
+        position: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: rgba(25, 23, 24, 1);
     }
 
     .loadingimage {
         position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 200%;
-        height: 100%;
-        background-size: 100% 100%;
-        background-image: url('burgerloading.gif');
+        top: 10%;
+        left: 12%;
+        width: 20%;
+        height: 10%;
+    }
+
+    .loadingtext {
+        margin: auto;
+        top: 22%;
+        left: 12%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .framescreen {
+        width: 1900px;
     }
 
     * {
         overflow-x: auto;
+        overflow-y: hidden;
     }
 }

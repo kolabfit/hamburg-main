@@ -5,7 +5,7 @@ window.addEventListener("load", async function () {
     for (let i = 0; i < 100; i++) {
         const progressContent = i + 1 + "%";
         progress.textContent = progressContent;
-        console.log("Loading ... " + progressContent);
+        // console.log("Loading ... " + progressContent);
         await wait(20);
     }
 
