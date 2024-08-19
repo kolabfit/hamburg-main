@@ -19,7 +19,7 @@ body {
     z-index: 1;
 }
 
-.hoverscrollleft {
+/* .hoverscrollleft {
     position: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -38,12 +38,12 @@ body {
     width: 15%;
     height: 100%;
     z-index: 2;
-}
+} */
 
-#oriental {
+/* #oriental {
     width: 500%;
-/*     transform: translateX(-40%); */
-}
+    transform: translateX(-40%);
+} */
 
 .intro {
     position: fixed;
@@ -121,7 +121,19 @@ body {
 
 @media screen and (max-width: 550px) {
     .framescreen {
-        width: 1900px;
+        width: 500%;
+        height: 100%;
+    }
+
+    .loadingimage {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-image: url('burgerloading.gif');
     }
 
     * {
