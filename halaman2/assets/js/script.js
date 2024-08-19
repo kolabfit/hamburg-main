@@ -1,9 +1,21 @@
+const catMeow = new Audio("assets/sounds/cat.mp3");
+catMeow.loop = false;
+
+function catPlaySound() {
+    catMeow.currentTime = 0;
+    catMeow.play();
+}
+
 let running = false;
 
 async function UFOEvent() {
     if (running) {
         return;
     }
+
+    const clickanimation = document.getElementById("clickanimation");
+
+    clickanimation.style.display = "none";
 
     const koin = document.getElementById("coin");
     const ufoevent = document.getElementById("ufo");
@@ -21,6 +33,7 @@ async function UFOEvent() {
 
     koin.style.display = "block";
     ufoevent.style.display = "none";
+    clickanimation.style.display = "block";
     running = false;
 
     function wait(ms) {

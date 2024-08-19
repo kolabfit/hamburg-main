@@ -34,10 +34,11 @@
         const catMeow = new Audio("assets/sounds/cat.mp3");
         catMeow.loop = false;
 
-        function catOnHover() {
+        function catPlaySound() {
             catMeow.currentTime = 0;
             catMeow.play();
         }
+        
         const rocketTerbangAudio = new Audio("assets/sounds/hamburgrocketlaunch.mp3");
         rocketTerbangAudio.loop = false;
         let running = false;
@@ -108,6 +109,10 @@
                 return;
             }
 
+            const clickanimation = document.getElementById("clickanimation");
+
+            clickanimation.style.display = "none";
+
             soundOpenDoor.play();
             soundWind.play();
 
@@ -146,6 +151,7 @@
                     soundWind.pause();
                     soundOpenDoor.currentTime = 0;
                     soundWind.currentTime = 0;
+                    clickanimation.style.display = "block";
                     runningDoor = false;
                 } else {
                     posX += 0.8;
@@ -158,6 +164,10 @@
             if (clickedDoor || runningDoor) {
                 return;
             }
+            
+            const clickanimation = document.getElementById("clickanimation");
+
+            clickanimation.style.display = "none";
 
             soundOpenDoor.play();
             soundWind.play();
@@ -209,14 +219,10 @@
         <div id="burger" class="layer4" style="z-index: 4"></div>
 
         <!-- Pintu -->
-        <div
-            id="door-hover"
-            class="doortrigger"
-            style="z-index: 9"
-            onmouseenter="animateDoor()"
-            onclick="enterDoor()"></div>
+        <div id="door-hover" class="doortrigger" style="z-index: 9" onmouseenter="animateDoor()" onclick="enterDoor()"></div>
         <div class="black" style="z-index: 4"></div>
         <div id="door" class="door" style="z-index: 4"></div>
+        <div id="clickanimation" class="clickanimation" style="z-index: 4"></div>
 
         <!-- Main -->
         <div class="layer5" style="z-index: 5">
@@ -251,7 +257,7 @@
         <!-- Efek Hover -->
         <div class="layer8" style="z-index: 8">
             <div class="burgerHover" onmouseover="animateBurgerRocket()"></div>
-            <div class="catHover" onclick="catOnHover()"></div>
+            <div class="catHover" onmouseenter="catPlaySound()"></div>
             <div class="BycicleHover" onclick="playBycicle()"></div>
         </div>
     </div>

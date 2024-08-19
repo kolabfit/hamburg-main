@@ -62,6 +62,15 @@ div {
     height: 24.8%;
 }
 
+.clickanimation {
+    position: absolute;
+    top: 52%;
+    left: 48.5%;
+    width: 3%;
+    height: 5%;
+    background-image: url('../../../all-assets/clickanimation.webp');
+}
+
 .black {
     position: absolute;
     top: 43.7%;
