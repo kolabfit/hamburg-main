@@ -75,29 +75,28 @@ function playIntro() {
 //     oriental.style.transform = `translateX(${translateX}%)`;
 // }
 
-// window.addEventListener("resize", function () {
-//     setPage();
-// });
-
-// window.addEventListener("load", function () {
-//     setPage();
-// });
-
-// function setPage() {
-//     if (window.matchMedia("(orientation: landscape)").matches) {
-//         landscape.style.display = "block";
-//         oriental.style.display = "none";
-//         hoverLeft.style.display = "none";
-//         hoverRight.style.display = "none";
-//     } else {
-//         landscape.style.display = "none";
-//         oriental.style.display = "block";
-//         hoverLeft.style.display = "block";
-//         hoverRight.style.display = "block";
-//     }
-// }
-
-window.addEventListener("wheel", function () {
-    console.log("Scrolling");
-    window.scrollY = 0;
+window.addEventListener("resize", function () {
+    setPage();
 });
+
+window.addEventListener("load", function () {
+    setPage();
+});
+
+function setPage() {
+    const framescreen = document.getElementById("framescreen");
+    framescreen.style.height = window.innerHeight + "px";
+    console.log(framescreen.style.height + "px");
+
+    // if (window.matchMedia("(orientation: landscape)").matches) {
+    //     landscape.style.display = "block";
+    //     oriental.style.display = "none";
+    //     hoverLeft.style.display = "none";
+    //     hoverRight.style.display = "none";
+    // } else {
+    //     landscape.style.display = "none";
+    //     oriental.style.display = "block";
+    //     hoverLeft.style.display = "block";
+    //     hoverRight.style.display = "block";
+    // }
+}
