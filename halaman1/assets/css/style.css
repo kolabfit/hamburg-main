@@ -75,6 +75,15 @@ div {
     background-image: url('../../../all-assets/clickanimation.webp');
 }
 
+.clickPopUpAnimation {
+    position: absolute;
+    top: 11%;
+    left: 4%;
+    width: 7%;
+    height: 11%;
+    background-image: url('../../../all-assets/clickanimation.webp');
+}
+
 .black {
     position: absolute;
     top: 43.7%;
