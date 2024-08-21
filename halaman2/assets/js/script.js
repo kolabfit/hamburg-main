@@ -1,9 +1,16 @@
 const catMeow = new Audio("assets/sounds/cat.mp3");
 catMeow.loop = false;
+const lapMejaSound = new Audio("assets/sounds/lapmeja.mp3");
+lapMejaSound.loop = false;
 
 function catPlaySound() {
     catMeow.currentTime = 0;
     catMeow.play();
+}
+
+function lapPlaySound() {
+    lapMejaSound.currentTime = 0;
+    lapMejaSound.play();
 }
 
 let running = false;
