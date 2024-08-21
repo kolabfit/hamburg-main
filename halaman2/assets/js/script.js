@@ -1,16 +1,67 @@
+//cat meow
 const catMeow = new Audio("assets/sounds/cat.mp3");
 catMeow.loop = false;
-const lapMejaSound = new Audio("assets/sounds/lapmeja.mp3");
-lapMejaSound.loop = false;
-
 function catPlaySound() {
     catMeow.currentTime = 0;
     catMeow.play();
 }
 
+// lap meja
+const lapMejaSound = new Audio("assets/sounds/lapmeja.mp3");
+lapMejaSound.loop = false;
 function lapPlaySound() {
     lapMejaSound.currentTime = 0;
     lapMejaSound.play();
+}
+
+//kiss muach
+const kissMuachSound = new Audio("assets/sounds/kiss.mp3");
+kissMuachSound.loop = false;
+function kissMuach() {
+  kissMuachSound.currentTime = 0;
+  kissMuachSound.play();
+}
+
+
+// Juke box sound
+const jukeBoxAudio = new Audio("assets/sounds/musicbox.mp3");
+jukeBoxAudio.loop = false;
+function playJukeBoxSound() {  
+    jukeBoxAudio.currentTime = 0;
+    jukeBoxAudio.play();
+}
+
+// suara dalem resto
+function playLoopingSoundDalem() {
+    const loopingSound = new Audio("assets/sounds/suaradalem.mp3"); 
+    loopingSound.loop = true;  
+    loopingSound.play(); 
+}
+
+// suara bearish
+const bearishAudio = new Audio("assets/sounds/bearish.mp3");
+bearishAudio.loop = false;
+function playSoundBearish (){
+  bearishAudio.currentTime = 0;
+  bearishAudio.play();
+}
+
+
+// suara bullish
+const bullishAudio = new Audio("assets/sounds/bullish.mp3");
+bullishAudio.loop = false;
+function playSoundBullish (){
+  bullishAudio.currentTime = 0;
+  bullishAudio.play();
+}
+
+
+// suara bullish
+const ufoAudio = new Audio("assets/sounds/ufoburger.mp3");
+ufoAudio.loop = false;
+function ufosound(){
+  ufoAudio.currentTime = 0;
+  ufoAudio.play();
 }
 
 let running = false;
@@ -263,7 +314,7 @@ function animateBullishRusaLightOn() {
     }
 }
 
-function animateBearishBeruangLightOff() {
+function animateBullishRusaLightOff() {
     let move = null;
     let alpha = 0.6;
 
@@ -281,6 +332,7 @@ function animateBearishBeruangLightOff() {
         }
     }
 }
+
 
 document.addEventListener("mousemove", function (e) {
     const leafA = document.getElementById("leaf-A");

@@ -246,7 +246,6 @@ body{
 .trigger8:hover {
     cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
-
 .bar-chair{
     position: fixed;
     background-image: url('../contents/kursibar.png');
@@ -260,12 +259,19 @@ body{
 
 .duckess{
     position: fixed;
+    z-index: 10;
     background-image: url('../contents/duckess-ezgif.com-video-to-webp-converter.webp');
-    background-size: 12% 27%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+    top: 25%;
+    left: 35%;
     transform: translate(36.8%, 37.5%);
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    height: 29%;
+}
+ 
+.duckess:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .pelayan{
@@ -407,6 +413,7 @@ body{
 .ufo{
     display: none;
     position: fixed;
+    z-index: 15;
     background-image: url('../contents/layer10/ufo-ezgif.com-video-to-webp-converter.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -449,6 +456,7 @@ body{
 }
 
 .clickanimation {
+    z-index: 20;
     position: absolute;
     width: 100%;
     height: 100%;
