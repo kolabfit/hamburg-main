@@ -153,6 +153,12 @@ function animateDoor() {
     }
 }
 
+function copyText() {
+    navigator.clipboard.writeText("FJkjskajklcmasolKDJDAKLSkdsdffascAS");
+
+    alert("Link berhasil disalin!");
+}
+
 function enterDoor() {
     if (clickedDoor || runningDoor) {
         return;

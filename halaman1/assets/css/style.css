@@ -345,6 +345,26 @@ div {
     align-items: center;
 }
 
+.ca-code:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.telegram:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.instagram:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.xhover:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.tiktok:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .links {
     overflow: visible;
     position: absolute;
