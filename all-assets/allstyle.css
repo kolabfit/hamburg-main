@@ -176,4 +176,11 @@ body {
         overflow-x: scroll;
         overflow-y: hidden;
     }
+
+    .musichandler {
+        top: 85%;
+        left: 2.5%;
+        width: 20%;
+        height: 10%;
+    }
 }
