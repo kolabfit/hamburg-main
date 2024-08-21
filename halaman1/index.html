@@ -8,6 +8,14 @@
         <link rel="stylesheet" href="../all-assets/allstyle.css" />
 
         <script>
+            //looping suara luar
+            function playLoopingSoundLuar() {
+            const loopingSound = new Audio("assets/sounds/musicluar.mp3"); 
+            loopingSound.loop = true;  
+            loopingSound.currentTime = 0;
+            loopingSound.play();  
+}
+
             const bycicleAudio = new Audio("assets/sounds/bicycle.mp3");
             const bycicleBellAudio = new Audio(
                 "assets/sounds/bicycle bell.mp3"
@@ -209,7 +217,8 @@
         </script>
     </head>
 
-    <body>
+    <body onload="playLoopingSoundLuar()">
+
         <div class="container-main" id="container-main">
             <!-- Awan -->
             <div id="awan" class="layer1"></div>
