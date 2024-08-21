@@ -206,6 +206,20 @@
                     }
                 }
             }
+
+            // Popup
+            function popupShow() {
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("container-main").style.filter =
+                    "blur(3px)";
+                document.getElementById("container-main").style.transition =
+                    "filter 0.5s";
+            }
+
+            function popupHide() {
+                document.getElementById("popup").style.display = "none";
+                document.getElementById("container-main").style.filter = "none";
+            }
         </script>
     </head>
 
@@ -285,5 +299,83 @@
                 <div class="BycicleHover" onclick="playBycicle()"></div>
             </div>
         </div>
+
+        <!-- Popup -->
+        <div class="popup-container" id="popup">
+            <!-- Background -->
+            <img
+                src="../all-assets/popup-assets/Paper.webp"
+                alt=""
+                class="popup-background"
+            />
+
+            <!-- Content -->
+            <div class="popup-content">
+                <img
+                    src="../all-assets/popup-assets/weblooping-ezgif.com-video-to-webp-converter.webp"
+                    class="hamburg-popup"
+                    alt=""
+                />
+
+                <div class="links">
+                    <img
+                        src="../all-assets/popup-assets/Untitled-2.png"
+                        alt=""
+                        class="w-70"
+                    />
+                    <a href="https://www.google.com" class="ca-code w-70">
+                        <img
+                            src="../all-assets/popup-assets/CAcode.webp"
+                            alt=""
+                            class="w-100"
+                        />
+                    </a>
+                    <div class="sosmed">
+                        <a href="https://www.google.com" class="w-60"
+                            ><img
+                                src="../all-assets/popup-assets/IgButton.webp"
+                                alt=""
+                                class="w-100"
+                        /></a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/TiktokButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/XButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/TelegramButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="exit-button" onclick="popupHide()">
+                    <img
+                        src="../all-assets/popup-assets/EXITButton.webp"
+                        alt=""
+                        class="w-100"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- Trigger -->
+        <div
+            class="popup-trigger"
+            onclick="popupShow()"
+            style="z-index: 100"
+        ></div>
     </body>
 </html>

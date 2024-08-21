@@ -110,6 +110,7 @@
             <div class="ufo" id="ufo"></div>
             <div id="clickanimation" class="clickanimation"></div>
         </div>
+
         <!-- Trigger -->
         <div class="trigger">
             <div
@@ -122,7 +123,7 @@
                 onmousemove="animateHamburgLightOn()"
                 onmouseleave="animateHamburgLightOff()"></div>
             <div class="trigger3" onclick="playRingingPhone()"></div>
-            <div class="trigger4" onclick="UFOEvent()"></div>
+            <div class="trigger4" onmouseover="UFOEvent()" onclick="popupShow()"></div>
             <div
                 class="trigger5"
                 onmouseover="animateBearishBeruangLightOn()"
@@ -140,6 +141,73 @@
             <!-- Trigger -->
             <div class="trigger8" onmouseenter="catPlaySound()"></div>
             <div class="trigger-pelayan" onmouseenter="lapPlaySound()"></div>
+        </div>
+
+        <!-- Popup -->
+        <div class="popup-container" id="popup">
+            <!-- Background -->
+            <img
+                src="../all-assets/popup-assets/Paper.webp"
+                alt=""
+                class="popup-background"
+            />
+
+            <!-- Content -->
+            <div class="popup-content">
+                <img
+                    src="../all-assets/popup-assets/hamburg-popup.webp"
+                    class="hamburg-popup"
+                    alt=""
+                />
+
+                <div class="links">
+                    <img
+                        src="../all-assets/popup-assets/Caption.webp"
+                        alt=""
+                        class="w-70"
+                    />
+                    <a href="https://www.google.com" class="ca-code w-70">
+                        <img
+                            src="../all-assets/popup-assets/CAcode.webp"
+                            alt=""
+                            class="w-100"
+                        />
+                    </a>
+                    <div class="sosmed w-60">
+                        <a href="https://www.google.com" class="w-60"
+                            ><img
+                                src="../all-assets/popup-assets/IgButton.webp"
+                                alt=""
+                                class="w-100"
+                        /></a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/TiktokButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/XButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                        <a href="" class="w-60">
+                            <img
+                                src="../all-assets/popup-assets/TelegramButton.webp"
+                                alt=""
+                                class="w-100"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="exit-button" onclick="popupHide()">
+                    <img src="../all-assets/popup-assets/EXITButton.webp" alt="" class="w-100">
+                </div>
+            </div>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

@@ -294,3 +294,116 @@ div {
 .BycicleHover:hover {
     cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
+
+.popup-container {
+    overflow: visible;
+    position: absolute;
+    display: none;
+    right: 37%;
+    top:20%;
+    z-index: 100;
+    width: 23%;
+    height: 100%;
+}
+
+.popup-background {
+    width: 110%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.popup-content {
+    width: 90%;
+    height: max-content;
+    overflow: visible;
+    position: absolute;
+    top: -6%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.ca-code {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    overflow: visible;
+    position: absolute;
+    top: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: max-content;
+}
+
+.sosmed {
+    position: absolute;
+    top: 110%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 60%;
+}
+
+.hamburg-popup {
+    height: max-content;
+    width: 90%;
+}
+
+.w-100 {
+    width: 100%;
+    height: max-content;
+}
+
+.w-60{
+    width: 60%;
+    height: max-content;
+}
+
+.w-80{
+    width: 80%;
+    height: max-content;
+}
+
+.w-70{
+    width: 70%;
+    height: max-content;
+}
+
+.exit-button{
+    position: absolute;
+    bottom: -10%;
+    align-self: flex-end;
+    padding-right: 10%;
+    width: 10%;
+    height: auto;
+}
+
+.exit-button:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.popup-trigger{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 14.5%;
+    height: 35%;
+    background-color: transparent;
+}
+
+.popup-trigger:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}

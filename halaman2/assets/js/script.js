@@ -314,3 +314,15 @@ document.addEventListener("mousemove", function (e) {
     leafD.style.transform = `translateX(${offsetLeafD}px)`;
     main.style.transform = `translateX(-${offsetMain}px)`;
 });
+
+// Popup
+function popupShow() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("main").style.filter = "blur(3px)";
+    document.getElementById("main").style.transition = "filter 0.5s";
+}
+
+function popupHide() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("main").style.filter = "none";
+}
