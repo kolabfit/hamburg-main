@@ -30,13 +30,6 @@ function playJukeBoxSound() {
     jukeBoxAudio.play();
 }
 
-// suara dalem resto
-function playLoopingSoundDalem() {
-    const loopingSound = new Audio("assets/sounds/suaradalem.mp3");
-    loopingSound.loop = true;
-    loopingSound.play();
-}
-
 // suara bearish
 const bearishAudio = new Audio("assets/sounds/bearish.mp3");
 bearishAudio.loop = false;

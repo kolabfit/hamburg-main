@@ -1,16 +1,5 @@
-//looping suara luar
-function playLoopingSoundLuar() {
-    const loopingSound = new Audio("assets/sounds/musicluar.mp3");
-    loopingSound.loop = true;
-    loopingSound.currentTime = 0;
-    loopingSound.play();
-}
-
 const bycicleAudio = new Audio("assets/sounds/bicycle.mp3");
-const bycicleBellAudio = new Audio("assets/sounds/bicycle bell.mp3");
 bycicleAudio.loop = true;
-bycicleAudio.volume = 0.25;
-bycicleBellAudio.loop = false;
 
 let isPlayingBycicle = false;
 
@@ -21,7 +10,6 @@ function playBycicle() {
 
     isPlayingBycicle = true;
     bycicleAudio.play();
-    bycicleBellAudio.play();
 
     setTimeout(() => {
         isPlayingBycicle = false;
