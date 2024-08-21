@@ -18,50 +18,47 @@ function lapPlaySound() {
 const kissMuachSound = new Audio("assets/sounds/kiss.mp3");
 kissMuachSound.loop = false;
 function kissMuach() {
-  kissMuachSound.currentTime = 0;
-  kissMuachSound.play();
+    kissMuachSound.currentTime = 0;
+    kissMuachSound.play();
 }
-
 
 // Juke box sound
 const jukeBoxAudio = new Audio("assets/sounds/musicbox.mp3");
 jukeBoxAudio.loop = false;
-function playJukeBoxSound() {  
+function playJukeBoxSound() {
     jukeBoxAudio.currentTime = 0;
     jukeBoxAudio.play();
 }
 
 // suara dalem resto
 function playLoopingSoundDalem() {
-    const loopingSound = new Audio("assets/sounds/suaradalem.mp3"); 
-    loopingSound.loop = true;  
-    loopingSound.play(); 
+    const loopingSound = new Audio("assets/sounds/suaradalem.mp3");
+    loopingSound.loop = true;
+    loopingSound.play();
 }
 
 // suara bearish
 const bearishAudio = new Audio("assets/sounds/bearish.mp3");
 bearishAudio.loop = false;
-function playSoundBearish (){
-  bearishAudio.currentTime = 0;
-  bearishAudio.play();
+function playSoundBearish() {
+    bearishAudio.currentTime = 0;
+    bearishAudio.play();
 }
-
 
 // suara bullish
 const bullishAudio = new Audio("assets/sounds/bullish.mp3");
 bullishAudio.loop = false;
-function playSoundBullish (){
-  bullishAudio.currentTime = 0;
-  bullishAudio.play();
+function playSoundBullish() {
+    bullishAudio.currentTime = 0;
+    bullishAudio.play();
 }
-
 
 // suara bullish
 const ufoAudio = new Audio("assets/sounds/ufoburger.mp3");
 ufoAudio.loop = false;
-function ufosound(){
-  ufoAudio.currentTime = 0;
-  ufoAudio.play();
+function ufosound() {
+    ufoAudio.currentTime = 0;
+    ufoAudio.play();
 }
 
 let running = false;
@@ -333,7 +330,6 @@ function animateBullishRusaLightOff() {
     }
 }
 
-
 document.addEventListener("mousemove", function (e) {
     const leafA = document.getElementById("leaf-A");
     const leafB = document.getElementById("leaf-B");
@@ -377,4 +373,10 @@ function popupShow() {
 function popupHide() {
     document.getElementById("popup").style.display = "none";
     document.getElementById("main").style.filter = "none";
+}
+
+function copyText() {
+    navigator.clipboard.writeText("FJkjskajklcmasolKDJDAKLSkdsdffascAS");
+
+    alert("Link berhasil disalin!");
 }

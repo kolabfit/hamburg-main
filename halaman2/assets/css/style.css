@@ -363,6 +363,22 @@ body{
     height: 20%;
 }
 
+.telegram:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.instagram:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.xhover:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.tiktok:hover{
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
 .wallphonecell{
     display: block;
     position: fixed;
@@ -587,6 +603,10 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.ca-code:hover {
+    cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
 }
 
 .links {
