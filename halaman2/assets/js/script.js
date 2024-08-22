@@ -369,7 +369,9 @@ function popupHide() {
 }
 
 function copyText() {
-    navigator.clipboard.writeText("FJkjskajklcmasolKDJDAKLSkdsdffascAS");
+    navigator.clipboard.writeText(
+        "5vX4JdxapxpUfUdSy6gjatUSXbknfavqVbo1XVB69xUM"
+    );
 
     alert("Link berhasil disalin!");
 }

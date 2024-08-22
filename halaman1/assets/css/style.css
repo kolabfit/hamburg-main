@@ -343,6 +343,7 @@ div {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
 .ca-code:hover {
@@ -435,4 +436,8 @@ div {
 
 .popup-trigger:hover {
     cursor: url(../../../all-assets/CURSORHOVER.png) 30 30, crosshair;
+}
+
+.copy-image{
+    width: 30%;
 }
