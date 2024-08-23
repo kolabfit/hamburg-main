@@ -439,5 +439,9 @@ div {
 }
 
 .copy-image{
-    width: 30%;
+    width: 15%;
+}
+
+.codespace {
+    font-size: 0.5vw;
 }
