@@ -626,7 +626,7 @@ body{
 }
 
 .popup-background {
-    width: 110%;
+    width: 120%;
     height: auto;
     position: absolute;
     top: 0;
@@ -634,11 +634,17 @@ body{
     z-index: -1;
 }
 
+.codespace.email{
+    font-weight: bold;
+    font-size: 1vw;
+    margin: 0;
+}
+
 .popup-content {
     position: absolute;
     top: -15%;
     bottom: 10%;
-    left: -2%;
+    left: 2%;
     width: 100%;
     height: max-content;
     display: flex;

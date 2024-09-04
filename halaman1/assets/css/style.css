@@ -316,7 +316,7 @@ div {
 }
 
 .popup-background {
-    width: 110%;
+    width: 120%;
     height: auto;
     position: absolute;
     top: 0;
@@ -330,7 +330,7 @@ div {
     overflow: visible;
     position: absolute;
     top: -6%;
-    left: 3%;
+    left: 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -344,6 +344,10 @@ div {
     justify-content: center;
     align-items: center;
     gap: 5px;
+}
+.ca-code.email{
+    position: absolute;
+    top: 140%;
 }
 
 .ca-code:hover {
@@ -380,7 +384,7 @@ div {
 
 .sosmed {
     position: absolute;
-    top: 110%;
+    top: 109%;
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -414,7 +418,7 @@ div {
 
 .exit-button{
     position: absolute;
-    bottom: -10%;
+    bottom: -20%;
     align-self: flex-end;
     padding-right: 10%;
     width: 10%;
@@ -444,4 +448,8 @@ div {
 
 .codespace {
     font-size: 0.5vw;
+}
+
+.codespace.email{
+    font-size: 1vw;
 }
